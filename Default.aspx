@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Farmacie1._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <link rel="stylesheet" href="App_Themes/Styles.css">
     <main>
         <section class="row" aria-labelledby="aspnetTitle">
             <h1 id="aspnetTitle">ASP.NET</h1>
@@ -49,9 +49,10 @@
          </div>
 
         <label for="fname">Cauta medicament dupa nume </label>
-         <input type="text" id="cautarenume" runat="server"><br><br>
+         <input type="text" id="cautarenume" runat="server"><br>
         <button runat="server" id="btncauta" onserverclick="cauta_onclick">Cauta</button>
         <div id="rezultatecautare" runat="server"></div>
     </main>
+    
 
 </asp:Content>

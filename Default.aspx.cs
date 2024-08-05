@@ -87,15 +87,22 @@ namespace Farmacie1
                         HtmlGenericControl octrl = new HtmlGenericControl("span");
                         //octrl.InnerHtml = "In stoc exista urmatoarele produse:";
                         //divProduse.Controls.Add(new HtmlGenericControl("<span>In stoc exista urmatoarele produse:</span>"));
-
+                        octrl.InnerHtml += "<table class='tblresults'>" + "<thead>" +"<th>" + "Nume" + " </th>";
+                        octrl.InnerHtml += "<th>" + "Data_Expirare" + " </th>";
+                        octrl.InnerHtml += "<th>" + "Pret" + " </th>";
+                        octrl.InnerHtml += "<th>" + "Cantitate" + " </th>"+ "</thead>";
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            octrl.InnerHtml += "<br/>";
-                            octrl.InnerHtml += "<span>" + dt.Rows[i]["Nume"].ToString() + " </span>";
-                            octrl.InnerHtml += "<span>" + dt.Rows[i]["Data_Expirare"].ToString() + " </span>";
-                            octrl.InnerHtml += "<span>" + dt.Rows[i]["Pret"].ToString() + " </span>";
-                            octrl.InnerHtml += "<span>" + dt.Rows[i]["Cantitate"].ToString() + "</span>";
-
+                            //octrl.InnerHtml += "<br/>";
+                            //octrl.InnerHtml += "<span>" + dt.Rows[i]["Nume"].ToString() + " </span>";
+                            //octrl.InnerHtml += "<span>" + dt.Rows[i]["Data_Expirare"].ToString() + " </span>";
+                            //octrl.InnerHtml += "<span>" + dt.Rows[i]["Pret"].ToString() + " </span>";
+                            //octrl.InnerHtml += "<span>" + dt.Rows[i]["Cantitate"].ToString() + "</span>";
+                            octrl.InnerHtml += "<tr>" + "<td>" + dt.Rows[i]["Nume"].ToString() + " </td>";
+                            octrl.InnerHtml += "<td>" + dt.Rows[i]["Data_Expirare"].ToString() + " </td>";
+                            octrl.InnerHtml += "<td>" + dt.Rows[i]["Pret"].ToString() + " </td>";
+                            octrl.InnerHtml += "<td>" + dt.Rows[i]["Cantitate"].ToString() + "</td>"+ "</tr>";
+                            octrl.InnerHtml += "</table>";
                             rezultatecautare.Controls.Add(octrl);
 
                             //divProduse.Controls.Add(new HtmlGenericControl("<br/>"));

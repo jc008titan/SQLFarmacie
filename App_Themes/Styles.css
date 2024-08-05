@@ -1,0 +1,7 @@
+﻿body {
+}
+.tblresults td, .tblresults th
+{
+    border: solid 1px blue;
+    padding: 5px;
+}
