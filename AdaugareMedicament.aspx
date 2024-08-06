@@ -18,20 +18,24 @@
   <tr>
     <td>
  <input type="text" id="adauganume" runat="server"><br>
+        <div id="validarenume"><label>Eroare</label></div>
     </td>
     <td>
     <input type="text" id="adaugadata" runat="server"><br>
+        <div id="validaredata"><label>Eroare</label></div>
     </td>
     <td>
     <input type="text" id="adaugapret" runat="server"><br>
+        <div id="validarepret"><label>Eroare</label></div>
     </td>
     <td>
     <input type="text" id="adaugacantitate" runat="server"><br>
+        <div id="validarecantitate"><label>Eroare</label></div>
     </td>
     </tr>
 </table>
         <br>
-        <button runat="server" id="btnadauga" onserverclick="adauga_onclick">Adauga</button>
+           <asp:button id="btnadauga" usesubmitbehavior="true" Text="Adauga" onclientclick="javascript:return valideazadate()" runat="server" onclick="adauga_onclick" />
         <div id="adaugat" runat="server"></div>
     </main>
 </asp:Content>
