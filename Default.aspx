@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Farmacie1._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <link rel="stylesheet" href="App_Themes/Styles.css">
+    
     <main>
         <section class="row" aria-labelledby="aspnetTitle">
             <h1 id="aspnetTitle">ASP.NET</h1>
@@ -39,9 +39,9 @@
                 </p>
             </section>
         </div>
-
-
         <hr />
+
+
 
         <a href="AdaugareMedicament.aspx">Adaugare medicament</a>
         <span id="spantest" runat="server"></span>

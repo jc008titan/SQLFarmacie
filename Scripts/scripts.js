@@ -1,0 +1,7 @@
+﻿
+
+
+valideazadate()
+{
+    alert("mesaj test")
+}

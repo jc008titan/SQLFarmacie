@@ -99,7 +99,7 @@ namespace Farmacie1
                             //octrl.InnerHtml += "<span>" + dt.Rows[i]["Pret"].ToString() + " </span>";
                             //octrl.InnerHtml += "<span>" + dt.Rows[i]["Cantitate"].ToString() + "</span>";
                             octrl.InnerHtml += "<tr>" + "<td>" + dt.Rows[i]["Nume"].ToString() + " </td>";
-                            octrl.InnerHtml += "<td>" + dt.Rows[i]["Data_Expirare"].ToString() + " </td>";
+                            octrl.InnerHtml += "<td>" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/mm/yyyy") + " </td>";
                             octrl.InnerHtml += "<td>" + dt.Rows[i]["Pret"].ToString() + " </td>";
                             octrl.InnerHtml += "<td>" + dt.Rows[i]["Cantitate"].ToString() + "</td>"+ "</tr>";
                             octrl.InnerHtml += "</table>";
