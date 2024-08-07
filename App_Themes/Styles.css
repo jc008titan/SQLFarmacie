@@ -1,7 +1,16 @@
-﻿body {
-}
-.tblresults td, .tblresults th
+﻿.tblresults td, .tblresults th
 {
     border: solid 1px blue;
     padding: 5px;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    font-size: 1em;
+}
+
+.ui-draggable, .ui-droppable {
+    background-position: top;
 }

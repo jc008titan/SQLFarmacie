@@ -9,8 +9,7 @@
 window.onload = function () {
     initializarejavascript()
 }
-function initializarejavascript()
-{
+function initializarejavascript() {
     document.getElementById("validarenume").style.display = "none"
     document.getElementById("validaredata").style.display = "none"
     document.getElementById("validarepret").style.display = "none"
@@ -23,11 +22,10 @@ function initializarejavascript()
 }
 
 var countDecimals = function (value) {
-        if (Math.floor(value) === value) return 0;
-        return value.toString().split(".")[1].length || 0;
+    if (Math.floor(value) === value) return 0;
+    return value.toString().split(".")[1].length || 0;
 }
-function validarejavascript()
-{
+function validarejavascript() {
     var ok = 1
     if (document.getElementById("MainContent_adauganume").value == "") {
         document.getElementById("MainContent_adauganume").style.border = "solid 1px red"
@@ -35,12 +33,11 @@ function validarejavascript()
         document.getElementById("validarenume").innerText = "Numele nu poate fi blank"
         ok = 0
     }
-    else
-    {
+    else {
         document.getElementById("MainContent_adauganume").style.border = "solid 1px black"
         document.getElementById("validarenume").style.display = "none"
     }
-    
+
     var timestamp = Date.parse((document.getElementById("MainContent_adaugadata").value));
     if (isNaN(timestamp) == true) {
         document.getElementById("MainContent_adaugadata").style.border = "solid 1px red"
@@ -48,22 +45,20 @@ function validarejavascript()
         document.getElementById("validaredata").innerText = "Nu e o data valida"
         ok = 0
     }
-    else if (timestamp + 1 < Date.parse(new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })))
-    {
+    else if (timestamp + 1 < Date.parse(new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }))) {
         document.getElementById("MainContent_adaugadata").style.border = "solid 1px red"
         document.getElementById("validaredata").style.display = "block"
         document.getElementById("validaredata").innerText = "Data expirata"
         ok = 0
     }
-    else{
+    else {
         document.getElementById("MainContent_adaugadata").style.border = "solid 1px black"
         document.getElementById("validaredata").style.display = "none"
     }
     var strpret = document.getElementById("MainContent_adaugapret").value
-    if (strpret.toString().indexOf(',') > 0)
-    {
+    if (strpret.toString().indexOf(',') > 0) {
         strpret = strpret.replace(',', '.')
-        document.getElementById("MainContent_adaugapret").value=strpret
+        document.getElementById("MainContent_adaugapret").value = strpret
     }
     var pret = parseFloat(strpret);
     if (isNaN(pret) == true) {
@@ -72,8 +67,7 @@ function validarejavascript()
         document.getElementById("validarepret").innerText = "NaN"
         ok = 0
     }
-    else if (pret < 0)
-    {
+    else if (pret < 0) {
         document.getElementById("MainContent_adaugapret").style.border = "solid 1px red"
         document.getElementById("validarepret").style.display = "block"
         document.getElementById("validarepret").innerText = "pretul nu poate fi negativ"
@@ -85,12 +79,11 @@ function validarejavascript()
         document.getElementById("validarepret").innerText = "pretul are prea multe zecimale"
         ok = 0
     }
-    else
-    {
+    else {
         document.getElementById("MainContent_adaugapret").style.border = "solid 1px black"
         document.getElementById("validarepret").style.display = "none"
     }
-    
+
 
     var cantitate = parseInt((document.getElementById("MainContent_adaugacantitate").value));
     if (isNaN(cantitate) == true) {
@@ -102,15 +95,14 @@ function validarejavascript()
     else {
         document.getElementById("MainContent_adaugacantitate").style.border = "solid 1px black"
         document.getElementById("validarecantitate").style.display = "none"
-        if(ok!=0)return true
+        if (ok != 0) return true
     }
 
     return false;
 }
 
 
-function valideazadate()
-{
+function valideazadate() {
     var ok = 1;
     //alert("mesaj test")
     //alert($("#MainContent_adauganume").val())
@@ -120,8 +112,7 @@ function valideazadate()
         ok = 0
         $('#validarenume').css("display", "block")
     }
-    else
-    {
+    else {
         $("#MainContent_adauganume").css("border", "solid 1px black")
         $('#validarenume').css("display", "none")
     }
@@ -154,7 +145,7 @@ function valideazadate()
     else {
         $("#MainContent_adaugacantitate").css("border", "solid 1px black")
         $('#validarecantitate').css("display", "none")
-        if(ok==1)return true
+        if (ok == 1) return true
     }
     return false
 

@@ -54,6 +54,7 @@
          <input type="text" id="cautarenume" runat="server"><br>
         <button runat="server" id="btncauta" onserverclick="cauta_onclick">Cauta</button>
         <div id="rezultatecautare" runat="server"></div>
+
     </main>
     
 

@@ -30,6 +30,11 @@ namespace Farmacie1
                         try
                         {
                             con.Open();
+
+                        if (Request.QueryString["ID"] != null)
+                            sterge_onclick(Convert.ToInt32(Request.QueryString["ID"]));
+
+
                             dt.Load(cmd.ExecuteReader());
                         divProduse.Controls.Clear();
 
@@ -43,8 +48,7 @@ namespace Farmacie1
                             {
                                 octrl.InnerHtml += "<br/>";
                                 octrl.InnerHtml += "<span>" + dt.Rows[i]["Nume"].ToString() + "</span>";
-
-                                divProduse.Controls.Add(octrl);
+                            divProduse.Controls.Add(octrl);
 
                                 //divProduse.Controls.Add(new HtmlGenericControl("<br/>"));
                                 //divProduse.Controls.Add(new HtmlGenericControl("<span>" + dt.Rows[i]["Nume"].ToString() + "</span>"));
@@ -63,6 +67,37 @@ namespace Farmacie1
 
         }
 
+        protected void sterge_onclick(int id)
+        {
+            using (var conn = new SqlConnection("Data Source=DESKTOP-E459JU9\\SQLEXPRESS01;Initial Catalog=farmacie;Integrated Security=True;Encrypt=False"))
+            {
+                //var cmd = new SqlCommand("select * from Stock", conn);
+                //cmd.Parameters.AddWithValue("@bar", 17);
+                conn.Open();
+                //cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+
+                using (var con = new SqlConnection("Data Source=DESKTOP-E459JU9\\SQLEXPRESS01;Initial Catalog=farmacie;Integrated Security=True;Encrypt=False"))
+                using (var cmd = new SqlCommand(" DELETE" + " FROM [farmacie].[dbo].[Stock] WHERE ID=" + id, con))
+                {
+                    try
+                    {
+                        con.Open();
+                        dt.Load(cmd.ExecuteReader());
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //(snip) Log Exceptions
+                    }
+                }
+                //}
+            }
+
+        }
+
+
         protected void cauta_onclick(object sender, EventArgs e) 
         {
             using (var conn = new SqlConnection("Data Source=DESKTOP-E459JU9\\SQLEXPRESS01;Initial Catalog=farmacie;Integrated Security=True;Encrypt=False"))
@@ -78,6 +113,7 @@ namespace Farmacie1
                 {
                     try
                     {
+                        rezultatecautare.Controls.Clear();
                         con.Open();
                         dt.Load(cmd.ExecuteReader());
 
@@ -85,12 +121,40 @@ namespace Farmacie1
                         //Response.Write("In stoc exista urmatoarele produse:");
                         //spantest.InnerHtml = "Test";
                         HtmlGenericControl octrl = new HtmlGenericControl("span");
+                        /*HtmlTable otbl= new HtmlTable();
+                        otbl.Attributes.Add("class", "tsblresults");
+
+
+                        HtmlTableRow oheader = new HtmlTableRow();
+                        HtmlTableCell ocell = new HtmlTableCell();
+                        ocell.InnerText = "Nume";
+                        oheader.Cells.Add(ocell);
+                        ocell = new HtmlTableCell();
+                        ocell.InnerText = "Data Expirare";
+                        oheader.Cells.Add(ocell);
+                        ocell = new HtmlTableCell();
+                        ocell.InnerText = "Pret";
+                        oheader.Cells.Add(ocell);
+                        ocell = new HtmlTableCell();
+                        ocell.InnerText = "Cantitate";
+                        oheader.Cells.Add(ocell);
+                        ocell = new HtmlTableCell();
+                        ocell.InnerText = "Editeaza";
+                        oheader.Cells.Add(ocell);
+                        ocell = new HtmlTableCell();
+                        oheader.Cells.Add(ocell);
+                        otbl.Controls.Add(oheader);*/
+
+
+
                         //octrl.InnerHtml = "In stoc exista urmatoarele produse:";
                         //divProduse.Controls.Add(new HtmlGenericControl("<span>In stoc exista urmatoarele produse:</span>"));
                         octrl.InnerHtml += "<table class='tblresults'>" + "<thead>" +"<th>" + "Nume" + " </th>";
                         octrl.InnerHtml += "<th>" + "Data_Expirare" + " </th>";
                         octrl.InnerHtml += "<th>" + "Pret" + " </th>";
-                        octrl.InnerHtml += "<th>" + "Cantitate" + " </th>"+ "</thead>";
+                        octrl.InnerHtml += "<th>" + "Cantitate" + " </th>";
+                        octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
+                        octrl.InnerHtml += "<th> "+"</th>" + "</thead>";
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
                             //octrl.InnerHtml += "<br/>";
@@ -99,17 +163,61 @@ namespace Farmacie1
                             //octrl.InnerHtml += "<span>" + dt.Rows[i]["Pret"].ToString() + " </span>";
                             //octrl.InnerHtml += "<span>" + dt.Rows[i]["Cantitate"].ToString() + "</span>";
                             octrl.InnerHtml += "<tr>" + "<td>" + dt.Rows[i]["Nume"].ToString() + " </td>";
-                            octrl.InnerHtml += "<td>" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/mm/yyyy") + " </td>";
+                            octrl.InnerHtml += "<td>" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy") + " </td>";
                             octrl.InnerHtml += "<td>" + dt.Rows[i]["Pret"].ToString() + " </td>";
-                            octrl.InnerHtml += "<td>" + dt.Rows[i]["Cantitate"].ToString() + "</td>"+ "</tr>";
-                            octrl.InnerHtml += "</table>";
-                            rezultatecautare.Controls.Add(octrl);
+                            octrl.InnerHtml += "<td>" + dt.Rows[i]["Cantitate"].ToString() + "</td>";
+                            octrl.InnerHtml += "<td>" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>"+ "</td>";
+                            octrl.InnerHtml += "<td>" + "<a href='/Default.aspx?id="+ dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>"+"</a>" + "</td>" + "</tr>";
+                            //rezultatecautare.Controls.Add(octrl);
 
                             //divProduse.Controls.Add(new HtmlGenericControl("<br/>"));
                             //divProduse.Controls.Add(new HtmlGenericControl("<span>" + dt.Rows[i]["Nume"].ToString() + "</span>"));
                             // divProduse.InnerText += dt.Rows[i]["Nume"] ;
+                            /* oheader = new HtmlTableRow();
+                             ocell = new HtmlTableCell();
+                            ocell.InnerText = dt.Rows[i]["Nume"].ToString();
+                            oheader.Cells.Add(ocell);
+                            ocell = new HtmlTableCell();
+                            ocell.InnerText = DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/mm/yyyy");
+                            oheader.Cells.Add(ocell);
+                            ocell = new HtmlTableCell();
+                            ocell.InnerText = dt.Rows[i]["Pret"].ToString();
+                            oheader.Cells.Add(ocell);
+                            ocell = new HtmlTableCell();
+                            ocell.InnerText = dt.Rows[i]["Cantitate"].ToString();
+                            oheader.Cells.Add(ocell);
+                            ocell = new HtmlTableCell();
+                            ocell.InnerHtml = "<a href = '/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "' > Editeaza </a >";
+                            oheader.Cells.Add(ocell);
+
+
+
+                            ocell = new HtmlTableCell();
+                            Button img = new Button();
+                            //img.ImageUrl = "Images/Trash.png";
+                            img.ID = "delicon" + dt.Rows[i]["ID"].ToString();
+                           // img.Attributes.Add("width","25");
+                           // img.Attributes.Add("height", "25");
+                            img.Click +=new EventHandler(sterge_onclick);
+                            ocell.Controls.Add(img);
+                            oheader.Cells.Add(ocell);
+                            otbl.Controls.Add(oheader);*/
                         }
 
+
+                        octrl.InnerHtml += "</table>";
+                        rezultatecautare.Controls.Add(octrl);
+                        //rezultatecautare.Controls.Add(otbl);
+
+                        /*Button img1 = new Button();
+                        Page.RegisterRequiresRaiseEvent(img1);
+                        //img.ImageUrl = "Images/Trash.png";
+                        img1.ID = "test";
+                        // img.Attributes.Add("width","25");
+                        // img.Attributes.Add("height", "25");
+                        img1.CausesValidation = false;
+                        img1.Click += new EventHandler(sterge_onclick);
+                        rezultatecautare.Controls.Add(img1);*/
 
                     }
                     catch (Exception ex)
@@ -120,6 +228,7 @@ namespace Farmacie1
             }
 
         }
+
     }
 
     

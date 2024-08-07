@@ -4,7 +4,7 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
+    <script type="text/javascript" src="Scripts/scripts.js"></script>
     <main aria-labelledby="title">
       Adaugare Medicament
 
@@ -18,24 +18,24 @@
   <tr>
     <td>
  <input type="text" id="adauganume" runat="server"><br>
-        <div id="validarenume"><label>Eroare</label></div>
+        <div id="validarenume">Error</div>
     </td>
     <td>
     <input type="text" id="adaugadata" runat="server"><br>
-        <div id="validaredata"><label>Eroare</label></div>
+        <div id="validaredata">Error</div>
     </td>
     <td>
     <input type="text" id="adaugapret" runat="server"><br>
-        <div id="validarepret"><label>Eroare</label></div>
+        <div id="validarepret">Error</div>
     </td>
     <td>
     <input type="text" id="adaugacantitate" runat="server"><br>
-        <div id="validarecantitate"><label>Eroare</label></div>
+        <div id="validarecantitate">Error</div>
     </td>
     </tr>
 </table>
         <br>
-           <asp:button id="btnadauga" usesubmitbehavior="true" Text="Adauga" onclientclick="javascript:return valideazadate()" runat="server" onclick="adauga_onclick" />
+           <asp:button id="btnadauga" usesubmitbehavior="true" Text="Adauga" onclientclick="javascript:return validarejavascript()" runat="server" onclick="adauga_onclick" />
         <div id="adaugat" runat="server"></div>
     </main>
 </asp:Content>
