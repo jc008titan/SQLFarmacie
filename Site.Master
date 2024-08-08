@@ -81,14 +81,14 @@
     <button class="dropbtn">Stock
     </button>
     <div class="dropdown-content">
-      <a href="">Toate</a>
+      <a href="Stock.aspx">Toate</a>
       <a href="">Medicamente fara reteta</a>
       <a href="">Vitamine si suplimente</a>
       <a href="">Frumusete</a>
     </div>
   </div> 
   
-  <a href="">Cauta</a>
+  <a href="Cauta.aspx">Cauta</a>
   <a href="AdaugareMedicament.aspx">Adauga</a>
 </div><br /><br /><br />
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
