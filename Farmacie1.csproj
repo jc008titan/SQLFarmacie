@@ -257,6 +257,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Theme1\" />
+    <Folder Include="Plugins\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
