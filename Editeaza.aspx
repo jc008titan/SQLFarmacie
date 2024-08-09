@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Editeaza.aspx.cs"  Inherits="Farmacie1.Editeaza" %>
+﻿<%@ Page Title="Edit Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Editeaza.aspx.cs"  Inherits="Farmacie1.Editeaza" %>
 
 
 
@@ -10,11 +10,13 @@
 
 <table class='tblresults'>
   <thead>
+      <tr>
     <th>Nume medicament</th>
     <th>Data expirare</th>
     <th>Pret</th>
     <th>Cantitate</th>
       <th>Categorie</th>
+          </tr>
   </thead>
    <tr>
    <td>

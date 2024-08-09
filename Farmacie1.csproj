@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdaugareMedicament.aspx" />
+    <Content Include="App_Themes\Menu.css" />
     <Content Include="App_Themes\Styles.css" />
     <Content Include="Cauta.aspx" />
     <Content Include="Contact.aspx" />
@@ -128,6 +129,7 @@
     <Content Include="Editeaza.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Plugins\MenuUC.ascx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -241,6 +243,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Plugins\MenuUC.ascx.cs">
+      <DependentUpon>MenuUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plugins\MenuUC.ascx.designer.cs">
+      <DependentUpon>MenuUC.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -274,7 +283,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Theme1\" />
-    <Folder Include="Plugins\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

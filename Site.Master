@@ -1,100 +1,27 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Farmacie1.SiteMaster" %>
-
+<%@ Register Src="~/Plugins/MenuUC.ascx" TagPrefix="uc" TagName="TopMenu" %>
 <!DOCTYPE html>
 
 <html lang="en">
-<head runat="server">
+<head runat="server"> 
+    <title></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="App_Themes/Styles.css">
+    <link rel="stylesheet" href="App_Themes/Menu.css">
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="Scripts/sort.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.navbar {
-    overflow: hidden;
-    background-color: #333;
-}
-
-    .navbar a {
-        float: left;
-        font-size: 16px;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-    .dropdown .dropbtn {
-        font-size: 16px;
-        border: none;
-        outline: none;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-    }
-
-    .navbar a:hover, .dropdown:hover .dropbtn {
-        background-color: red;
-    }
-
-.dropdown-content {
-    display: visible;
-    position: absolute;
-    background-color: #333;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-    .dropdown-content a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-
-        .dropdown-content a:hover {
-            background-color: green;
-        }
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-    </style>
+    
 </head>
 <body>
     <form runat="server">
-        <div class="navbar">
-	<a href="default.aspx">Home</a>
-  <div class="dropdown">
-    <button class="dropbtn" onclick="window.location.href='Stock.aspx'">Stock
-    </button>
-    <div class="dropdown-content">
-      <a href="Stock.aspx">Toate</a>
-      <a href="Stock.aspx?cat=2">Medicamente fara reteta</a>
-      <a href="Stock.aspx?cat=4">Vitamine si suplimente</a>
-      <a href="Stock.aspx?cat=5">Frumusete</a>
-    </div>
-  </div> 
-  
-  <a href="Cauta.aspx">Cauta</a>
-  <a href="AdaugareMedicament.aspx">Adauga</a>
-</div><br /><br /><br /><br /><br/>
+    <uc:TopMenu runat="server"></uc:TopMenu>
+    
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
     </form>
 </body>
 </html>
