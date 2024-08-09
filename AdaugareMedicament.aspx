@@ -14,6 +14,7 @@
     <th>Data expirare</th>
     <th>Pret</th>
     <th>Cantitate</th>
+      <th>Categorie</th>
   </thead>
   <tr>
     <td>
@@ -32,6 +33,10 @@
     <input type="text" id="adaugacantitate" runat="server"><br>
         <div id="validarecantitate">Error</div>
     </td>
+      <td>
+<asp:DropDownList ID="adaugacategorie" runat="server"></asp:DropDownList>
+    <div id="validarecategorie">Error</div>
+</td>
     </tr>
 </table>
         <br>

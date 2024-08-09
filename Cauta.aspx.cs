@@ -15,22 +15,20 @@ namespace Farmacie1
     {
         Functii fct = new Functii();
 
-        protected void sterge_onclick(int id)
+        protected void Page_Load(object sender, EventArgs e)
         {
+            //if (!Page.IsPostBack)
+            //{
 
-                    try
-                    {
-                        fct.Sterge(id);
+            try
+            {
 
-                    }
-                    catch (Exception ex)
-                    {
-                        //(snip) Log Exceptions
-                    }
-                
-               //}
-            
-
+                if (Request.QueryString["ID"] != null)
+                    fct.Sterge(Convert.ToInt32(Request.QueryString["ID"]));
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
 
@@ -48,39 +46,40 @@ namespace Farmacie1
                         //Response.Write("In stoc exista urmatoarele produse:");
                         //spantest.InnerHtml = "Test";
                         HtmlGenericControl octrl = new HtmlGenericControl("span");
-                        /*HtmlTable otbl= new HtmlTable();
-                        otbl.Attributes.Add("class", "tsblresults");
+                /*HtmlTable otbl= new HtmlTable();
+                otbl.Attributes.Add("class", "tsblresults");
 
 
-                        HtmlTableRow oheader = new HtmlTableRow();
-                        HtmlTableCell ocell = new HtmlTableCell();
-                        ocell.InnerText = "Nume";
-                        oheader.Cells.Add(ocell);
-                        ocell = new HtmlTableCell();
-                        ocell.InnerText = "Data Expirare";
-                        oheader.Cells.Add(ocell);
-                        ocell = new HtmlTableCell();
-                        ocell.InnerText = "Pret";
-                        oheader.Cells.Add(ocell);
-                        ocell = new HtmlTableCell();
-                        ocell.InnerText = "Cantitate";
-                        oheader.Cells.Add(ocell);
-                        ocell = new HtmlTableCell();
-                        ocell.InnerText = "Editeaza";
-                        oheader.Cells.Add(ocell);
-                        ocell = new HtmlTableCell();
-                        oheader.Cells.Add(ocell);
-                        otbl.Controls.Add(oheader);*/
+                HtmlTableRow oheader = new HtmlTableRow();
+                HtmlTableCell ocell = new HtmlTableCell();
+                ocell.InnerText = "Nume";
+                oheader.Cells.Add(ocell);
+                ocell = new HtmlTableCell();
+                ocell.InnerText = "Data Expirare";
+                oheader.Cells.Add(ocell);
+                ocell = new HtmlTableCell();
+                ocell.InnerText = "Pret";
+                oheader.Cells.Add(ocell);
+                ocell = new HtmlTableCell();
+                ocell.InnerText = "Cantitate";
+                oheader.Cells.Add(ocell);
+                ocell = new HtmlTableCell();
+                ocell.InnerText = "Editeaza";
+                oheader.Cells.Add(ocell);
+                ocell = new HtmlTableCell();
+                oheader.Cells.Add(ocell);
+                otbl.Controls.Add(oheader);*/
 
 
 
-                        //octrl.InnerHtml = "In stoc exista urmatoarele produse:";
-                        //divProduse.Controls.Add(new HtmlGenericControl("<span>In stoc exista urmatoarele produse:</span>"));
-                        octrl.InnerHtml += "<table class='tblresults'>" + "<thead>" +"<th>" + "Nume" + " </th>";
-                        octrl.InnerHtml += "<th>" + "Data_Expirare" + " </th>";
-                        octrl.InnerHtml += "<th>" + "Pret" + " </th>";
-                        octrl.InnerHtml += "<th>" + "Cantitate" + " </th>";
-                        octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
+                //octrl.InnerHtml = "In stoc exista urmatoarele produse:";
+                //divProduse.Controls.Add(new HtmlGenericControl("<span>In stoc exista urmatoarele produse:</span>"));
+                octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "Nume" + " </th>";
+                octrl.InnerHtml += "<th onclick='sortTableDate(1)'>" + "Data_Expirare" + " </th>";
+                octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "Pret" + " </th>";
+                octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "Cantitate" + " </th>";
+                octrl.InnerHtml += "<th onclick='sortTable(4)'>" + "Categorie" + " </th>";
+                octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
                         octrl.InnerHtml += "<th> "+"</th>" + "</thead>";
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
@@ -93,8 +92,9 @@ namespace Farmacie1
                             octrl.InnerHtml += "<td>" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy") + " </td>";
                             octrl.InnerHtml += "<td>" + dt.Rows[i]["Pret"].ToString() + " </td>";
                             octrl.InnerHtml += "<td>" + dt.Rows[i]["Cantitate"].ToString() + "</td>";
-                            octrl.InnerHtml += "<td>" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>"+ "</td>";
-                            octrl.InnerHtml += "<td>" + "<a href='/Default.aspx?id="+ dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>"+"</a>" + "</td>" + "</tr>";
+                    octrl.InnerHtml += "<td>" + fct.SelectNumeID(Convert.ToInt32(dt.Rows[i]["Categorie"]))+ "</td>";
+                    octrl.InnerHtml += "<td>" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>"+ "</td>";
+                            octrl.InnerHtml += "<td>" + "<a href='?id="+ dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>"+"</a>" + "</td>" + "</tr>";
                             //rezultatecautare.Controls.Add(octrl);
 
                             //divProduse.Controls.Add(new HtmlGenericControl("<br/>"));

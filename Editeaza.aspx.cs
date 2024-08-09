@@ -29,14 +29,24 @@ namespace Farmacie1
             
                     try
                     {
-                        DataTable dt = fct.SelectID(Convert.ToInt32(Request.QueryString["ID"]));
+                DataTable dtc = new DataTable();
+                dtc = fct.SelectCategorie();
+                adaugacategorie.DataSource = dtc;
+                adaugacategorie.DataBind();
+                adaugacategorie.DataTextField = "Nume";
+                adaugacategorie.DataValueField = "ID";
+                adaugacategorie.DataBind();
+
+
+
+                DataTable dt = fct.SelectID(Convert.ToInt32(Request.QueryString["ID"]));
                         adauganume.Value = dt.Rows[0]["Nume"].ToString();
-                        adaugadata.Value = DateTime.Parse(dt.Rows[0]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy");
+                        adaugadata.Value = DateTime.Parse(dt.Rows[0]["Data_Expirare"].ToString()).ToString("MM/dd/yyyy");
                         adaugapret.Value = dt.Rows[0]["Pret"].ToString();
                         adaugacantitate.Value = dt.Rows[0]["Cantitate"].ToString();
+                        adaugacategorie.SelectedValue = dt.Rows[0]["Categorie"].ToString();
 
-
-                    }
+            }
                     catch (Exception ex)
                     {
                         //(snip) Log Exceptions
@@ -59,7 +69,7 @@ namespace Farmacie1
                 
                     try
                     {
-                        fct.Adauga(adauganume.Value.ToString(),adaugadata.Value.ToString(),adaugapret.Value.ToString(),adaugacantitate.Value.ToString());
+                        fct.Editeaza(adauganume.Value.ToString(),adaugadata.Value.ToString(),adaugapret.Value.ToString(),adaugacantitate.Value.ToString(),Convert.ToInt32(Request.QueryString["ID"]), Convert.ToInt32(adaugacategorie.SelectedValue));
                         
                         //dt.Load(cmd.ExecuteReader());
 
@@ -70,7 +80,7 @@ namespace Farmacie1
                         //octrl.InnerHtml = "In stoc exista urmatoarele produse:";
                         //divProduse.Controls.Add(new HtmlGenericControl("<span>In stoc exista urmatoarele produse:</span>"));
 
-                            octrl.InnerText += adauganume.Value.ToString()+" "+adaugadata.Value.ToString()+" "+adaugapret.Value.ToString()+" "+adaugacantitate.Value.ToString();
+                            octrl.InnerText += adauganume.Value.ToString()+" "+adaugadata.Value.ToString()+" "+adaugapret.Value.ToString()+" "+adaugacantitate.Value.ToString() + " " + adaugacategorie.SelectedValue.ToString();
                         
                             adaugat.Controls.Add(octrl);
 

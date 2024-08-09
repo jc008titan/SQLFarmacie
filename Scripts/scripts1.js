@@ -37,7 +37,6 @@ function validarejavascript() {
         document.getElementById("MainContent_adauganume").style.border = "solid 1px black"
         document.getElementById("validarenume").style.display = "none"
     }
-
     var timestamp = Date.parse((document.getElementById("MainContent_adaugadata").value));
     if (isNaN(timestamp) == true) {
         document.getElementById("MainContent_adaugadata").style.border = "solid 1px red"
@@ -45,7 +44,7 @@ function validarejavascript() {
         document.getElementById("validaredata").innerText = "Nu e o data valida"
         ok = 0
     }
-    else if (timestamp + 1 < Date.parse(new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }))) {
+    else if (timestamp < Date.parse(new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }))) {
         document.getElementById("MainContent_adaugadata").style.border = "solid 1px red"
         document.getElementById("validaredata").style.display = "block"
         document.getElementById("validaredata").innerText = "Data expirata"

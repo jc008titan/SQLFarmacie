@@ -20,6 +20,9 @@ function initializarejavascript()
     document.getElementById("validarepret").style.color = 'red'
     document.getElementById("validarecantitate").style.color = 'red'
 
+    document.getElementById("validarecategorie").style.display = "none"
+    document.getElementById("validarecategorie").style.color = 'red'
+
 }
 
 var countDecimals = function (value) {
@@ -48,7 +51,7 @@ function validarejavascript()
         document.getElementById("validaredata").innerText = "Nu e o data valida"
         ok = 0
     }
-    else if (timestamp + 1 < Date.parse(new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })))
+    else if (timestamp < Date.parse(new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })))
     {
         document.getElementById("MainContent_adaugadata").style.border = "solid 1px red"
         document.getElementById("validaredata").style.display = "block"
@@ -90,7 +93,6 @@ function validarejavascript()
         document.getElementById("MainContent_adaugapret").style.border = "solid 1px black"
         document.getElementById("validarepret").style.display = "none"
     }
-    
 
     var cantitate = parseInt((document.getElementById("MainContent_adaugacantitate").value));
     if (isNaN(cantitate) == true) {
