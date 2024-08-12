@@ -1,0 +1,180 @@
+
+Log Entry : 
+08/12/2024 08:32:34
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 08:38:41
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 08:38:58
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 08:39:45
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 08:42:51
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 08:43:44
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 08:43:48
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 08:47:26
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:06:45
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:06:51
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:11:09
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:12:00
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:12:02
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:12:02
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:12:03
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:12:03
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:12:04
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:12:05
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:12:05
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:14:46
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:14:47
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:14:48
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:14:48
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:14:48
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:16:17
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:19:35
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:19:38
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:21:02
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:21:08
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:21:11
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:24:25
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:33:11
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:33:22
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:33:32
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:33:53
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:35:00
+Error Message:Invalid column name 'Data_Expirare1'.0
+
+Log Entry : 
+08/12/2024 09:37:19
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:39:22
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:40:32
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:44:48
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:45:30
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:46:58
+Error Message:Invalid column name 'Data_Expirare1'.
+
+Log Entry : 
+08/12/2024 09:49:32
+Error Message:Invalid column name 'Data_Expirare1'. Error line:0 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ErrorLogs\\12-00-24.txt
+
+Log Entry : 
+08/12/2024 09:59:50
+Error Message:Invalid column name 'Data_Expirare1'. Error line:143 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/12/2024 10:05:50
+Error Message:Invalid column name 'Data_Expirare1'. Error line:143 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs

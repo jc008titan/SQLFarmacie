@@ -9,6 +9,8 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using FunctiiSQL;
+using System.Diagnostics;
+using System.Text;
 
 namespace Farmacie1
 {
@@ -49,8 +51,18 @@ namespace Farmacie1
             }
                     catch (Exception ex)
                     {
-                        //(snip) Log Exceptions
-                    }
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                var line = frame.GetFileLineNumber();
+                var path = frame.GetFileName();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("$(document).ready(function (){");
+                sb.Append("showMessage(\"Eroare\");");
+                sb.Append("});");
+                ScriptManager.RegisterStartupScript(this, GetType(), "YourUniqueScriptKey",
+                sb.ToString(), true);
+                //(snip) Log Exceptions
+            }
                
                 //}
             
@@ -88,8 +100,18 @@ namespace Farmacie1
                     }
                     catch (Exception ex)
                     {
-                        //(snip) Log Exceptions
-                    }
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                var line = frame.GetFileLineNumber();
+                var path = frame.GetFileName();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("$(document).ready(function (){");
+                sb.Append("showMessage(\"Eroare\");");
+                sb.Append("});");
+                ScriptManager.RegisterStartupScript(this, GetType(), "YourUniqueScriptKey",
+                sb.ToString(), true);
+                //(snip) Log Exceptions
+            }
               
             
         }

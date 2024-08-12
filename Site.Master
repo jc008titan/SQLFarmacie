@@ -12,11 +12,47 @@
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script type="text/javascript" src="Scripts/sort.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+     <style>
+         .ui-widget-header,.ui-state-default, ui-button {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+         }
+      </style>
+    <script>
+         $(function() {
+            $( "#dialog-2" ).dialog({
+               autoOpen: false, 
+               buttons: {
+                  OK: function() {$(this).dialog("close");}
+               },
+               title: "Eroare",
+               position: {
+                  my: "left center",
+                  at: "left center"
+               }
+            });
+            
+
+
+         });
+        function showMessage(message) {
+
+            $("#dialog-2").text(message);
+            $("#dialog-2").dialog("open");
+            return false;
+        }
+    </script>
 </head>
 <body>
+    <div id = "dialog-2"
+         title = "Dialog Title goes here...">This my first jQuery UI Dialog!</div>
+
     <form runat="server">
     <uc:TopMenu runat="server"></uc:TopMenu>
     

@@ -283,6 +283,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Theme1\" />
+    <Folder Include="ErrorLogs\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
