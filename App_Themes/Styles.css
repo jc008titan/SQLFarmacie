@@ -1,13 +1,12 @@
-﻿.tblresults td, .tblresults th
-{
+﻿.tblresults td, .tblresults th {
     border: solid 1px blue;
-    padding: 5px;
+    border-collapse: collapse;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-table {
+table.tblresults {
     font-size: 1em;
 }
 
@@ -15,3 +14,42 @@ table {
     background-position: top;
 }
 
+.tblresults td {
+    padding: 5px;
+}
+
+@media screen and (max-width: 560px) {
+
+    .tblresults,
+    .tblresults thead,
+    .tblresults tbody,
+    .tblresults th,
+    .tblresults td,
+    .tblresults tr {
+        display: block;
+    }
+
+    .tblresults thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+        .tblresults tr {
+            margin-bottom: 20px;
+            border: solid 1px blue;
+            max-width: 360px;
+        }
+
+    .tblresults td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+        .tblresults td:before {
+            position: absolute;
+            left: 6px;
+            content: attr(data-label);
+            font-weight: bold;
+        }
+}

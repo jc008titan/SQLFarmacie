@@ -19,6 +19,9 @@ function initializarejavascript() {
     document.getElementById("validarepret").style.color = 'red'
     document.getElementById("validarecantitate").style.color = 'red'
 
+    document.getElementById("validarecategorie").style.display = "none"
+    document.getElementById("validarecategorie").style.color = 'red'
+
 }
 
 var countDecimals = function (value) {

@@ -11,17 +11,17 @@ namespace Farmacie1
 {
 
 
-    public partial class Stock
+    public partial class StockAJAX
     {
 
         /// <summary>
-        /// adaugacategorie control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList adaugacategorie;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// stock control.

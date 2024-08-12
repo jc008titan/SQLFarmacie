@@ -5,6 +5,43 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript" src="Scripts/scripts.js"></script>
+        <style>
+       @media screen and (max-width: 900px) {
+
+    .tblresults,
+    .tblresults thead,
+    .tblresults tbody,
+    .tblresults th,
+    .tblresults td,
+    .tblresults tr {
+        display: block;
+    }
+
+    .tblresults thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+        .tblresults tr {
+            max-width:360px;
+            margin-bottom: 20px;
+            border: solid 1px blue;
+        }
+
+    .tblresults td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+        .tblresults td:before {
+            position: absolute;
+            left: 6px;
+            content: attr(data-label);
+            font-weight: bold;
+        }
+}
+    </style>
     <main aria-labelledby="title">
       Adaugare Medicament
 
@@ -19,23 +56,23 @@
       </tr>
   </thead>
   <tr>
-    <td>
- <input type="text" id="adauganume" runat="server"><br>
+    <td data-label="Nume">
+ <input type="text"  id="adauganume" runat="server"><br>
         <div id="validarenume">Error</div>
     </td>
-    <td>
-    <input type="text" id="adaugadata" runat="server"><br>
+    <td data-label="Data_Expirare">
+    <input type="text"   id="adaugadata" runat="server"><br>
         <div id="validaredata">Error</div>
     </td>
-    <td>
-    <input type="text" id="adaugapret" runat="server"><br>
+    <td data-label="Pret">
+    <input type="text"  id="adaugapret" runat="server"><br>
         <div id="validarepret">Error</div>
     </td>
-    <td>
-    <input type="text" id="adaugacantitate" runat="server"><br>
+    <td data-label="Cantitate">
+    <input type="text"  id="adaugacantitate" runat="server"><br>
         <div id="validarecantitate">Error</div>
     </td>
-      <td>
+      <td data-label="Categorie">
 <asp:DropDownList ID="adaugacategorie" runat="server"></asp:DropDownList>
     <div id="validarecategorie">Error</div>
 </td>

@@ -67,11 +67,28 @@ namespace Farmacie1
 
             try
             {
+                DataTable dts = new DataTable();
+                dts = fct.SelectCategorie();
+                adaugacategorie.DataSource = dts;
+                adaugacategorie.DataBind();
+                adaugacategorie.DataTextField = "Nume";
+                adaugacategorie.DataValueField = "ID";
+                adaugacategorie.DataBind();
+                ListItem oItem = new ListItem();
+                oItem.Text = "Toate";
+                oItem.Value = "0";
+                adaugacategorie.Items.Insert(0,oItem);
+
+                
+
                 if (Request.QueryString["ID"] != null)
                     fct.Sterge(Convert.ToInt32(Request.QueryString["ID"]));
                 DataTable dt;
                 if (Request.QueryString["cat"] != null)
+                {
                     dt = fct.SelectCategorieNume(Convert.ToInt32(Request.QueryString["cat"]));
+                    adaugacategorie.SelectedValue = Request.QueryString["cat"];
+                }
                 else
                     dt = fct.Cauta("");
                 stock.Controls.Clear();
@@ -85,13 +102,13 @@ namespace Farmacie1
                 octrl.InnerHtml += "<th> " + "</th>" + "</thead>";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    octrl.InnerHtml += "<tr>" + "<td>" + dt.Rows[i]["Nume"].ToString() + " </td>";
-                    octrl.InnerHtml += "<td>" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy") + " </td>";
-                    octrl.InnerHtml += "<td>" + dt.Rows[i]["Pret"].ToString() + " </td>";
-                    octrl.InnerHtml += "<td>" + dt.Rows[i]["Cantitate"].ToString() + "</td>";
-                    octrl.InnerHtml += "<td>" + fct.SelectNumeID(Convert.ToInt32(dt.Rows[i]["Categorie"])) + "</td>";
-                    octrl.InnerHtml += "<td>" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>" + "</td>";
-                    octrl.InnerHtml += "<td>" + "<a href='?id=" + dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>" + "</a>" + "</td>" + "</tr>";
+                    octrl.InnerHtml += "<tr>" + "<td data-label=\"Nume\">" + dt.Rows[i]["Nume"].ToString() + " </td>";
+                    octrl.InnerHtml += "<td data-label=\"Data_Expirare\">" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy") + " </td>";
+                    octrl.InnerHtml += "<td data-label=\"Pret\">" + dt.Rows[i]["Pret"].ToString() + " </td>";
+                    octrl.InnerHtml += "<td data-label=\"Cantitate\">" + dt.Rows[i]["Cantitate"].ToString() + "</td>";
+                    octrl.InnerHtml += "<td data-label=\"Categorie\">" + fct.SelectNumeID(Convert.ToInt32(dt.Rows[i]["Categorie"])) + "</td>";
+                    octrl.InnerHtml += "<td data-label=\"Editeaza\">" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>" + "</td>";
+                    octrl.InnerHtml += "<td data-label=\"\">" + "<a href='?id=" + dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>" + "</a>" + "</td>" + "</tr>";
 
                 }
 

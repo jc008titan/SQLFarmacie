@@ -95,56 +95,56 @@ namespace Farmacie1
                         octrl.InnerHtml += "<th> "+"</th>" + "</thead>";
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            //octrl.InnerHtml += "<br/>";
-                            //octrl.InnerHtml += "<span>" + dt.Rows[i]["Nume"].ToString() + " </span>";
-                            //octrl.InnerHtml += "<span>" + dt.Rows[i]["Data_Expirare"].ToString() + " </span>";
-                            //octrl.InnerHtml += "<span>" + dt.Rows[i]["Pret"].ToString() + " </span>";
-                            //octrl.InnerHtml += "<span>" + dt.Rows[i]["Cantitate"].ToString() + "</span>";
-                            octrl.InnerHtml += "<tr>" + "<td>" + dt.Rows[i]["Nume"].ToString() + " </td>";
-                            octrl.InnerHtml += "<td>" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy") + " </td>";
-                            octrl.InnerHtml += "<td>" + dt.Rows[i]["Pret"].ToString() + " </td>";
-                            octrl.InnerHtml += "<td>" + dt.Rows[i]["Cantitate"].ToString() + "</td>";
-                    octrl.InnerHtml += "<td>" + fct.SelectNumeID(Convert.ToInt32(dt.Rows[i]["Categorie"]))+ "</td>";
-                    octrl.InnerHtml += "<td>" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>"+ "</td>";
-                            octrl.InnerHtml += "<td>" + "<a href='?id="+ dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>"+"</a>" + "</td>" + "</tr>";
-                            //rezultatecautare.Controls.Add(octrl);
+                    //octrl.InnerHtml += "<br/>";
+                    //octrl.InnerHtml += "<span>" + dt.Rows[i]["Nume"].ToString() + " </span>";
+                    //octrl.InnerHtml += "<span>" + dt.Rows[i]["Data_Expirare"].ToString() + " </span>";
+                    //octrl.InnerHtml += "<span>" + dt.Rows[i]["Pret"].ToString() + " </span>";
+                    //octrl.InnerHtml += "<span>" + dt.Rows[i]["Cantitate"].ToString() + "</span>";
+                    octrl.InnerHtml += "<tr>" + "<td data-label=\"Nume\">" + dt.Rows[i]["Nume"].ToString() + " </td>";
+                    octrl.InnerHtml += "<td data-label=\"Data_Expirare\">" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy") + " </td>";
+                    octrl.InnerHtml += "<td data-label=\"Pret\">" + dt.Rows[i]["Pret"].ToString() + " </td>";
+                    octrl.InnerHtml += "<td data-label=\"Cantitate\">" + dt.Rows[i]["Cantitate"].ToString() + "</td>";
+                    octrl.InnerHtml += "<td data-label=\"Categorie\">" + fct.SelectNumeID(Convert.ToInt32(dt.Rows[i]["Categorie"])) + "</td>";
+                    octrl.InnerHtml += "<td data-label=\"Editeaza\">" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>" + "</td>";
+                    octrl.InnerHtml += "<td data-label=\"\">" + "<a href='?id=" + dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>" + "</a>" + "</td>" + "</tr>";
+                    //rezultatecautare.Controls.Add(octrl);
 
-                            //divProduse.Controls.Add(new HtmlGenericControl("<br/>"));
-                            //divProduse.Controls.Add(new HtmlGenericControl("<span>" + dt.Rows[i]["Nume"].ToString() + "</span>"));
-                            // divProduse.InnerText += dt.Rows[i]["Nume"] ;
-                            /* oheader = new HtmlTableRow();
-                             ocell = new HtmlTableCell();
-                            ocell.InnerText = dt.Rows[i]["Nume"].ToString();
-                            oheader.Cells.Add(ocell);
-                            ocell = new HtmlTableCell();
-                            ocell.InnerText = DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/mm/yyyy");
-                            oheader.Cells.Add(ocell);
-                            ocell = new HtmlTableCell();
-                            ocell.InnerText = dt.Rows[i]["Pret"].ToString();
-                            oheader.Cells.Add(ocell);
-                            ocell = new HtmlTableCell();
-                            ocell.InnerText = dt.Rows[i]["Cantitate"].ToString();
-                            oheader.Cells.Add(ocell);
-                            ocell = new HtmlTableCell();
-                            ocell.InnerHtml = "<a href = '/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "' > Editeaza </a >";
-                            oheader.Cells.Add(ocell);
-
-
-
-                            ocell = new HtmlTableCell();
-                            Button img = new Button();
-                            //img.ImageUrl = "Images/Trash.png";
-                            img.ID = "delicon" + dt.Rows[i]["ID"].ToString();
-                           // img.Attributes.Add("width","25");
-                           // img.Attributes.Add("height", "25");
-                            img.Click +=new EventHandler(sterge_onclick);
-                            ocell.Controls.Add(img);
-                            oheader.Cells.Add(ocell);
-                            otbl.Controls.Add(oheader);*/
-                        }
+                    //divProduse.Controls.Add(new HtmlGenericControl("<br/>"));
+                    //divProduse.Controls.Add(new HtmlGenericControl("<span>" + dt.Rows[i]["Nume"].ToString() + "</span>"));
+                    // divProduse.InnerText += dt.Rows[i]["Nume"] ;
+                    /* oheader = new HtmlTableRow();
+                     ocell = new HtmlTableCell();
+                    ocell.InnerText = dt.Rows[i]["Nume"].ToString();
+                    oheader.Cells.Add(ocell);
+                    ocell = new HtmlTableCell();
+                    ocell.InnerText = DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/mm/yyyy");
+                    oheader.Cells.Add(ocell);
+                    ocell = new HtmlTableCell();
+                    ocell.InnerText = dt.Rows[i]["Pret"].ToString();
+                    oheader.Cells.Add(ocell);
+                    ocell = new HtmlTableCell();
+                    ocell.InnerText = dt.Rows[i]["Cantitate"].ToString();
+                    oheader.Cells.Add(ocell);
+                    ocell = new HtmlTableCell();
+                    ocell.InnerHtml = "<a href = '/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "' > Editeaza </a >";
+                    oheader.Cells.Add(ocell);
 
 
-                        octrl.InnerHtml += "</table>";
+
+                    ocell = new HtmlTableCell();
+                    Button img = new Button();
+                    //img.ImageUrl = "Images/Trash.png";
+                    img.ID = "delicon" + dt.Rows[i]["ID"].ToString();
+                   // img.Attributes.Add("width","25");
+                   // img.Attributes.Add("height", "25");
+                    img.Click +=new EventHandler(sterge_onclick);
+                    ocell.Controls.Add(img);
+                    oheader.Cells.Add(ocell);
+                    otbl.Controls.Add(oheader);*/
+                }
+
+
+                octrl.InnerHtml += "</table>";
                         rezultatecautare.Controls.Add(octrl);
                         //rezultatecautare.Controls.Add(otbl);
 
