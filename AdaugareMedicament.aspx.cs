@@ -13,6 +13,9 @@ using System.Text;
 using System.Web.Services.Description;
 using System.Diagnostics;
 using System.IO;
+using System.Security.Claims;
+using System.Configuration;
+using Microsoft.AspNet.Identity;
 
 namespace Farmacie1
 {
@@ -23,6 +26,8 @@ namespace Farmacie1
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (User.Identity.GetUserId() != "2c3fd8ce-7b56-4763-af75-0a0a31f73288")
+                    Response.Redirect("~/Default.aspx");
             DataTable dt = new DataTable();
             dt=fct.SelectCategorie();
             adaugacategorie.DataSource = dt;

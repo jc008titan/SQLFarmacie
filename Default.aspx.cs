@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using FunctiiSQL;
 using System.Diagnostics;
 using System.Text;
+using Microsoft.AspNet.Identity;
 
 namespace Farmacie1
 {
@@ -21,7 +22,7 @@ namespace Farmacie1
             //if (!Page.IsPostBack)
             //{
 
-                        try
+            try
                         {
 
                         if (Request.QueryString["ID"] != null)
@@ -147,8 +148,9 @@ namespace Farmacie1
                 octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "Pret" + " </th>";
                 octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "Cantitate" + " </th>";
                 octrl.InnerHtml += "<th onclick='sortTable(4)'>" + "Categorie" + " </th>";
-                octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
-                octrl.InnerHtml += "<th> " + "</th>" + "</thead>";
+                if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
+                if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th> " + "</th>";
+                octrl.InnerHtml += "</thead>";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     //octrl.InnerHtml += "<br/>";
@@ -161,8 +163,9 @@ namespace Farmacie1
                     octrl.InnerHtml += "<td data-label=\"Pret\">" + dt.Rows[i]["Pret"].ToString() + " </td>";
                     octrl.InnerHtml += "<td data-label=\"Cantitate\">" + dt.Rows[i]["Cantitate"].ToString() + "</td>";
                     octrl.InnerHtml += "<td data-label=\"Categorie\">" + fct.SelectNumeID(Convert.ToInt32(dt.Rows[i]["Categorie"])) + "</td>";
-                    octrl.InnerHtml += "<td data-label=\"Editeaza\">" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>" + "</td>";
-                    octrl.InnerHtml += "<td data-label=\"\">" + "<a href='?id=" + dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>" + "</a>" + "</td>" + "</tr>";
+                    if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<td data-label=\"Editeaza\">" + "<a href='/Editeaza.aspx?id=" + dt.Rows[i]["ID"].ToString() + "'>Editeaza</a>" + "</td>";
+                    if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<td data-label=\"\">" + "<a href='?id=" + dt.Rows[i]["ID"].ToString() + "'><img src='Images/Trash.png' width='25' height='25'>" + "</a>" + "</td>";
+                    octrl.InnerHtml += "</tr>";
                     //rezultatecautare.Controls.Add(octrl);
 
                     //divProduse.Controls.Add(new HtmlGenericControl("<br/>"));

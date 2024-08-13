@@ -33,7 +33,7 @@
     }
 
     .navbar a:hover, .dropdown:hover .dropbtn {
-        background-color: red;
+        background-color: blue;
     }
 
 .dropdown-content {
@@ -58,3 +58,38 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.cont {
+    overflow: hidden;
+    float: right;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+
+.logout {
+    overflow: hidden;
+    float:right;
+}
+
+    .logout .logoutbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .logout:hover .logoutbtn {
+        color: red;
+    }
+
