@@ -59,6 +59,7 @@ namespace Farmacie1
                     }
                     catch (Exception ex)
                     {
+                err.WriteLogException(ex);
                 var st = new StackTrace(ex, true);
                 var frame = st.GetFrame(0);
                 var line = frame.GetFileLineNumber();

@@ -11,12 +11,14 @@ using FunctiiSQL;
 using System.Diagnostics;
 using System.Text;
 using Microsoft.AspNet.Identity;
+using ClassLibrary1;
 
 namespace Farmacie1
 {
     public partial class Stock : Page
     {
         Functii fct = new Functii();
+        ErrorLogs err = new ErrorLogs();
         /*protected void Page_Load(object sender, EventArgs e)
         {
             //if (!Page.IsPostBack)
@@ -120,6 +122,7 @@ namespace Farmacie1
             }
             catch (Exception ex)
             {
+                err.WriteLogException(ex);
                 var st = new StackTrace(ex, true);
                 var frame = st.GetFrame(0);
                 var line = frame.GetFileLineNumber();

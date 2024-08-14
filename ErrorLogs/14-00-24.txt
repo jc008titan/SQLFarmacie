@@ -1,0 +1,44 @@
+
+Log Entry : 
+08/14/2024 09:36:06
+Error Message:There is no row at position 0. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 09:37:02
+Error Message:There is no row at position 0. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 09:37:09
+Error Message:There is no row at position 0. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 09:37:15
+Error Message:There is no row at position 0. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 09:37:21
+Error Message:There is no row at position 0. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 09:39:33
+Error Message:There is no row at position 1. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 09:40:09
+Error Message:There is no row at position 1. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 09:41:11
+Error Message:There is no row at position 0. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 09:44:46
+Error Message:There is no row at position 0. Error line:91 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 10:29:44
+Error Message:Invalid column name 'a50'. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 10:31:31
+Error Message:Invalid column name 'a50'. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs

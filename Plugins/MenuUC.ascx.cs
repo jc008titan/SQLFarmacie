@@ -28,5 +28,6 @@ namespace Farmacie1.Plugins
             authenticationManager.SignOut();
             Response.Redirect("~/Login.aspx");
         }
+
     }
 }

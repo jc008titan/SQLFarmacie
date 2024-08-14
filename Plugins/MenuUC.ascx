@@ -23,14 +23,19 @@
         <div class="cont">
                 <span>Cont:</span>
      <%if (id == "2c3fd8ce-7b56-4763-af75-0a0a31f73288")
-    {%><span style="color:orange">
+    {%><span style="color:orange" onclick="window.location.href='/Profil.aspx'" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='orange'">
         <%=cont%>
        </span><% 
     }
      else
-     {%><span style="color:lightgreen">
+     {%><span style="color:lightgreen" onclick="window.location.href='/Profil.aspx'" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='lightgreen'">
          <%Response.Write(cont);%>
         </span><% 
      }%>
     </div>
+     <%if (id == "2c3fd8ce-7b56-4763-af75-0a0a31f73288")
+{%><span class="Import">
+<asp:Button class="Importbtn" ID="btnUpload" runat="server" Text="Importare Excel" OnClientClick="window.location.href='ImportExcel.aspx'; return false;" CausesValidation="false"/>
+   </span><% }%>
+        
 </div><br />
