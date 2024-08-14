@@ -75,8 +75,21 @@ protected void btnUpload_Click(object sender, EventArgs e)
                                 if (worksheet.Cells[1, col].Value.ToString() == "Nume")
                                     nume = worksheet.Cells[row + 1, col].Value.ToString();
                                 if (worksheet.Cells[1, col].Value.ToString() == "Data_Expirare")
-                                    data = worksheet.Cells[row + 1, col].Value.ToString();
-                                if (worksheet.Cells[1, col].Value.ToString() == "Pret")
+                                {
+                                    var cellValue = worksheet.Cells[row + 1, col].Value;
+                                        DateTime parsedDate;
+                                        if (cellValue is double excelSerialDate)
+                                        {
+                                            DateTime baseDate = new DateTime(1900, 1, 1);
+                                            parsedDate = baseDate.AddDays(excelSerialDate - 2);
+                                        data = parsedDate.ToString("yyyy-MM-dd HH:mm:ss");
+                                        }
+                                        else
+                                    {
+                                        data = worksheet.Cells[row + 1, col].Value.ToString();
+                                    }
+                                }
+                                        if (worksheet.Cells[1, col].Value.ToString() == "Pret")
                                     pret = worksheet.Cells[row + 1, col].Value.ToString();
                                 if (worksheet.Cells[1, col].Value.ToString() == "Cantitate")
                                     cantitate = worksheet.Cells[row + 1, col].Value.ToString();

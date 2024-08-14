@@ -42,3 +42,67 @@ Error Message:Invalid column name 'a50'. Error line:208 Error path:C:\\Users\\ri
 Log Entry : 
 08/14/2024 10:31:31
 Error Message:Invalid column name 'a50'. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 11:49:53
+Error Message:Conversion failed when converting date and/or time from character string. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 11:49:53
+Error Message:Conversion failed when converting date and/or time from character string. Error line:93 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs
+
+Log Entry : 
+08/14/2024 11:55:08
+Error Message:Conversion failed when converting date and/or time from character string. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 11:55:08
+Error Message:Conversion failed when converting date and/or time from character string. Error line:93 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs
+
+Log Entry : 
+08/14/2024 11:56:02
+Error Message:Conversion failed when converting date and/or time from character string. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 11:56:02
+Error Message:Conversion failed when converting date and/or time from character string. Error line:93 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs
+
+Log Entry : 
+08/14/2024 12:16:12
+Error Message:Specified cast is not valid. Error line:78 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs
+
+Log Entry : 
+08/14/2024 12:19:57
+Error Message:Conversion failed when converting date and/or time from character string. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 12:19:57
+Error Message:Conversion failed when converting date and/or time from character string. Error line:93 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs
+
+Log Entry : 
+08/14/2024 12:21:30
+Error Message:Conversion failed when converting date and/or time from character string. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 12:21:30
+Error Message:Conversion failed when converting date and/or time from character string. Error line:93 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs
+
+Log Entry : 
+08/14/2024 12:24:09
+Error Message:Invalid date format in Data_Expirare column. Error line:93 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs
+
+Log Entry : 
+08/14/2024 12:27:19
+Error Message:Conversion failed when converting date and/or time from character string. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 12:27:19
+Error Message:Conversion failed when converting date and/or time from character string. Error line:93 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs
+
+Log Entry : 
+08/14/2024 12:29:54
+Error Message:Conversion failed when converting date and/or time from character string. Error line:208 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/14/2024 12:29:54
+Error Message:Conversion failed when converting date and/or time from character string. Error line:93 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\ImportExcel.aspx.cs

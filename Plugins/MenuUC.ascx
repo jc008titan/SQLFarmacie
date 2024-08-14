@@ -15,6 +15,10 @@
   <%if (id == "2c3fd8ce-7b56-4763-af75-0a0a31f73288")
       {  %><a href="AdaugareMedicament.aspx">Adauga</a> <% } %>
 
+    <div class="dropdown">
+  <asp:Button class="dropbtn" OnClick="ExcelExport" Text="Exportare Excel" runat="server">
+  </asp:Button>
+        </div>
 
     <div class="logout">
       <asp:Button class="logoutbtn" ID="LogoutButton" runat="server" OnClick="SignOut" Text="Deconectare" />
