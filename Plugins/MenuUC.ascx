@@ -1,6 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MenuUC.ascx.cs" Inherits="Farmacie1.Plugins.MenuUC" %>
 <div class="navbar" runat="server">
-<a href="default.aspx">Home</a>
+<div class="dropdown">
+<asp:Button class="dropbtn" OnClientClick="window.location.href='Default.aspx'; return false;" Text="Home" runat="server" CausesValidation="false">
+</asp:Button>
+    </div>
   <div class="dropdown">
     <asp:Button class="dropbtn" OnClientClick="window.location.href='Stock.aspx'; return false;" Text="Stock" runat="server" CausesValidation="false">
     </asp:Button>
