@@ -157,11 +157,7 @@ namespace Farmacie1
                 octrl.InnerHtml += "</thead>";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    //octrl.InnerHtml += "<br/>";
-                    //octrl.InnerHtml += "<span>" + dt.Rows[i]["Nume"].ToString() + " </span>";
-                    //octrl.InnerHtml += "<span>" + dt.Rows[i]["Data_Expirare"].ToString() + " </span>";
-                    //octrl.InnerHtml += "<span>" + dt.Rows[i]["Pret"].ToString() + " </span>";
-                    //octrl.InnerHtml += "<span>" + dt.Rows[i]["Cantitate"].ToString() + "</span>";
+
                     octrl.InnerHtml += "<tr>" + "<td data-label=\"Nume\">" + dt.Rows[i]["Nume"].ToString() + " </td>";
                     octrl.InnerHtml += "<td data-label=\"Data_Expirare\">" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy") + " </td>";
                     octrl.InnerHtml += "<td data-label=\"Pret\">" + dt.Rows[i]["Pret"].ToString() + " </td>";

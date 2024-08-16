@@ -81,18 +81,39 @@ namespace Farmacie1
                 oItem.Value = "0";
                 adaugacategorie.Items.Insert(0,oItem);
 
-                
+
+
+
+                int iPageNumber=1;
+                if (Request.QueryString["page"] != null) 
+                    if(int.Parse(Request.QueryString["page"].ToString()) > 0)
+                    iPageNumber = int.Parse(Request.QueryString["page"].ToString());
+
+
 
                 if (Request.QueryString["ID"] != null)
                     fct.Sterge(Convert.ToInt32(Request.QueryString["ID"]));
                 DataTable dt;
                 if (Request.QueryString["cat"] != null)
                 {
-                    dt = fct.SelectCategorieNume(Convert.ToInt32(Request.QueryString["cat"]));
+                    dt = fct.SelectCategorieNumePagina(Convert.ToInt32(Request.QueryString["cat"]),iPageNumber);
                     adaugacategorie.SelectedValue = Request.QueryString["cat"];
+                    paging.Controls.Clear();
+                    for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"]), iPageNumber); i++)
+                    {
+                        paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                    }
                 }
                 else
-                    dt = fct.Cauta("");
+                {
+                    paging.Controls.Clear();
+                    for (int i = 0; i < fct.NrPagini(); i++)
+                    {
+                        paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                    }
+                    //dt = fct.Cauta("");
+                    dt = fct.PaginaNr(iPageNumber);
+                }
                 stock.Controls.Clear();
                 HtmlGenericControl octrl = new HtmlGenericControl("span");
                 octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "Nume" + " </th>";
@@ -118,6 +139,8 @@ namespace Farmacie1
 
                 octrl.InnerHtml += "</table>";
                 stock.Controls.Add(octrl);
+
+                
 
             }
             catch (Exception ex)

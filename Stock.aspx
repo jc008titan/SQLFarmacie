@@ -15,10 +15,22 @@
                 xhttp.open("GET", "StockAJAX.aspx?cat=" + str, true);
                 xhttp.send();
             }
+            function openpage(page_nr) {
+                var url = window.location.href.split("page")[0].replace("&&", "&");
+
+                if (url.indexOf('?') > 0) {
+                    window.location.href = url + "&page=" + page_nr;
+                }
+                else
+                {
+                    window.location.href = url + "?page=" + page_nr;
+                }
+            }
         </script>
         <asp:DropDownList ID="adaugacategorie" runat="server" onchange="showStock(this.value)"></asp:DropDownList>
         <br /> <br /> 
          <div id="stock" runat="server"></div>
+        <div id="paging" runat="server"><!--a herf="javascript:OpenPage('1')" /><a herf="javascript:OpenPage('2')" /--></div>
 
     </main>
     
