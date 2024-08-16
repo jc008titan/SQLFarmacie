@@ -193,6 +193,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ImportExcel.aspx" />
+    <Content Include="ImportXML.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Plugins\MenuUC.ascx" />
     <Content Include="Profil.aspx" />
@@ -317,6 +318,12 @@
     </Compile>
     <Compile Include="ImportExcel.aspx.designer.cs">
       <DependentUpon>ImportExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportXML.aspx.cs">
+      <DependentUpon>ImportXML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportXML.aspx.designer.cs">
+      <DependentUpon>ImportXML.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

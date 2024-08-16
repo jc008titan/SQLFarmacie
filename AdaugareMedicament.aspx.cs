@@ -23,6 +23,7 @@ namespace Farmacie1
     {
         Functii fct = new Functii();
         ErrorLogs err= new ErrorLogs();
+        Medicament medicament = new Medicament();
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -49,7 +50,13 @@ namespace Farmacie1
                         HtmlGenericControl octrl = new HtmlGenericControl("span");
                 //octrl.InnerHtml = "In stoc exista urmatoarele produse:";
                 //divProduse.Controls.Add(new HtmlGenericControl("<span>In stoc exista urmatoarele produse:</span>"));
-                fct.Adauga(adauganume.Value.ToString(), adaugadata.Value.ToString(), adaugapret.Value.ToString(), adaugacantitate.Value.ToString(),Convert.ToInt32(adaugacategorie.SelectedValue));
+                medicament.Nume = adauganume.Value.ToString();
+                medicament.Data_Expirare = adaugadata.Value.ToString();
+                medicament.Pret = adaugapret.Value.ToString();
+                medicament.Cantitate = adaugacantitate.Value.ToString();
+                medicament.Categorie = Convert.ToInt32(adaugacategorie.SelectedValue);
+                fct.Editeaza(medicament);
+                fct.Adauga(medicament);
 
                             octrl.InnerText += adauganume.Value.ToString()+" "+adaugadata.Value.ToString()+" "+adaugapret.Value.ToString()+" "+adaugacantitate.Value.ToString() + " " + adaugacategorie.SelectedValue.ToString();
                         

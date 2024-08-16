@@ -19,6 +19,7 @@ namespace Farmacie1
 {
     public partial class ImportExcel : System.Web.UI.Page
     {
+        Medicament medicament = new Medicament();
         Functii fct = new Functii();
         ErrorLogs err = new ErrorLogs();
         protected void Page_Load(object sender, EventArgs e)
@@ -101,9 +102,16 @@ protected void btnUpload_Click(object sender, EventArgs e)
                         dt = fct.Cauta(nume.Trim());
                         if (nume != "" && data != "" && pret != "" && cantitate != "" && cat != 0)
                         {
+                            medicament.Nume = nume;
+                            medicament.Data_Expirare = data;
+                            medicament.Pret = pret;
+                            medicament.Cantitate = cantitate;
+                            medicament.id = Convert.ToInt32(Request.QueryString["ID"]);
+                            medicament.Categorie = cat;
+                            fct.Editeaza(medicament);
                             if (dt.Rows.Count == 0)
-                                fct.Adauga(nume, data, pret, cantitate, cat);
-                            else fct.Editeaza(nume, data, pret, cantitate, Convert.ToInt32(dt.Rows[0]["ID"]), cat);
+                                fct.Adauga(medicament);
+                            else fct.Editeaza(medicament);
                             ok = true;
                         }
                         

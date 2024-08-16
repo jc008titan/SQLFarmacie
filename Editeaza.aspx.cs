@@ -12,12 +12,15 @@ using FunctiiSQL;
 using System.Diagnostics;
 using System.Text;
 using Microsoft.AspNet.Identity;
+using ClassLibrary1;
 
 namespace Farmacie1
 {
     public partial class Editeaza : Page
     {
         Functii fct = new Functii();
+        Medicament medicament=new Medicament();
+        ErrorLogs err = new ErrorLogs();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (User.Identity.GetUserId() != "2c3fd8ce-7b56-4763-af75-0a0a31f73288")
@@ -55,6 +58,7 @@ namespace Farmacie1
             }
                     catch (Exception ex)
                     {
+                err.WriteLogException(ex);
                 var st = new StackTrace(ex, true);
                 var frame = st.GetFrame(0);
                 var line = frame.GetFileLineNumber();
@@ -85,7 +89,13 @@ namespace Farmacie1
                 
                     try
                     {
-                        fct.Editeaza(adauganume.Value.ToString(),adaugadata.Value.ToString(),adaugapret.Value.ToString(),adaugacantitate.Value.ToString(),Convert.ToInt32(Request.QueryString["ID"]), Convert.ToInt32(adaugacategorie.SelectedValue));
+                    medicament.Nume = adauganume.Value.ToString();
+                    medicament.Data_Expirare = adaugadata.Value.ToString();
+                medicament.Pret = adaugapret.Value.ToString();
+                medicament.Cantitate = adaugacantitate.Value.ToString();
+                medicament.id = Convert.ToInt32(Request.QueryString["ID"]);
+                medicament.Categorie = Convert.ToInt32(adaugacategorie.SelectedValue);
+                        fct.Editeaza(medicament);
                         
                         //dt.Load(cmd.ExecuteReader());
 
@@ -104,6 +114,7 @@ namespace Farmacie1
                     }
                     catch (Exception ex)
                     {
+                err.WriteLogException(ex);
                 var st = new StackTrace(ex, true);
                 var frame = st.GetFrame(0);
                 var line = frame.GetFileLineNumber();

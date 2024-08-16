@@ -50,7 +50,16 @@ namespace Farmacie1.Plugins
 
                 // Auto-fit the columns (optional, depending on your needs)
                 ws.Cells[ws.Dimension.Address].AutoFitColumns();
+                int colNumber = 1;
 
+                foreach (DataColumn col in dt.Columns)
+                {
+                    if (col.DataType == typeof(DateTime))
+                    {
+                        ws.Column(colNumber).Style.Numberformat.Format = "MM/dd/yyyy hh:mm:ss";
+                    }
+                    colNumber++;
+                }
                 // Set response headers and content type for Excel file
                 Response.Clear();
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";

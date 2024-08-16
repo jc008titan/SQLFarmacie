@@ -7,21 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Farmacie1.Plugins
+namespace Farmacie1
 {
 
 
-    public partial class MenuUC
+    public partial class ImportXML
     {
 
         /// <summary>
-        /// LogoutButton control.
+        /// fileUploadExcel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogoutButton;
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadExcel;
 
         /// <summary>
         /// btnUpload control.
@@ -33,12 +33,12 @@ namespace Farmacie1.Plugins
         protected global::System.Web.UI.WebControls.Button btnUpload;
 
         /// <summary>
-        /// btnUploadXML control.
+        /// rezultat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUploadXML;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rezultat;
     }
 }
