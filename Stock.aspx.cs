@@ -79,7 +79,10 @@ namespace Farmacie1
                 ListItem oItem = new ListItem();
                 oItem.Text = "Toate";
                 oItem.Value = "0";
-                adaugacategorie.Items.Insert(0,oItem);
+                adaugacategorie.Items.Insert(0, oItem);
+                ListItem oItem1 = new ListItem();
+                oItem1.Text = "Alege";
+                adaugacategorie.Items.Insert(0, oItem1);
 
 
 
@@ -89,8 +92,6 @@ namespace Farmacie1
                     if(int.Parse(Request.QueryString["page"].ToString()) > 0)
                     iPageNumber = int.Parse(Request.QueryString["page"].ToString());
 
-
-
                 if (Request.QueryString["ID"] != null)
                     fct.Sterge(Convert.ToInt32(Request.QueryString["ID"]));
                 DataTable dt;
@@ -99,7 +100,7 @@ namespace Farmacie1
                     dt = fct.SelectCategorieNumePagina(Convert.ToInt32(Request.QueryString["cat"]),iPageNumber);
                     adaugacategorie.SelectedValue = Request.QueryString["cat"];
                     paging.Controls.Clear();
-                    for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"]), iPageNumber); i++)
+                    for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"])); i++)
                     {
                         paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
                     }

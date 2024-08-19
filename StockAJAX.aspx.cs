@@ -16,8 +16,68 @@ namespace Farmacie1
         Functii fct = new Functii();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!User.Identity.IsAuthenticated)
-                Response.Redirect("~/Login.aspx");
+
+
+            /*int iPageNumber = 1;
+            if (Request.QueryString["page"] != null)
+                if (int.Parse(Request.QueryString["page"].ToString()) > 0)
+                    iPageNumber = int.Parse(Request.QueryString["page"].ToString());*/
+            /*DataTable dt = new DataTable();
+            if (Request.QueryString["cat"] != null)
+            {
+                dt = fct.SelectCategorieNumePagina(Convert.ToInt32(Request.QueryString["cat"]), iPageNumber);
+                paging.Controls.Clear();
+                for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"]), iPageNumber); i++)
+                {
+                    paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                }
+            }
+            else
+            {
+                paging.Controls.Clear();
+                for (int i = 0; i < fct.NrPagini(); i++)
+                {
+                    paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                }
+                //dt = fct.Cauta("");
+                dt = fct.PaginaNr(iPageNumber);
+            }*/
+
+
+            /*DataTable dt = new DataTable();
+            if (Request.QueryString["cat"] != null)
+            {
+                if (int.Parse(Request.QueryString["cat"].ToString()) > 0)
+                {
+                    dt = fct.SelectCategorieNumePagina(Convert.ToInt32(Request.QueryString["cat"]), iPageNumber);
+                    paging.Controls.Clear();
+                    for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"]), iPageNumber); i++)
+                    {
+                        paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                    }
+                }
+                else
+                {
+                    paging.Controls.Clear();
+                    for (int i = 0; i < fct.NrPagini(); i++)
+                    {
+                        paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                    }
+                    //dt = fct.Cauta("");
+                    dt = fct.PaginaNr(iPageNumber);
+                }
+            }
+            else
+            {
+                paging.Controls.Clear();
+                for (int i = 0; i < fct.NrPagini(); i++)
+                {
+                    paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                }
+                //dt = fct.Cauta("");
+                dt = fct.PaginaNr(iPageNumber);
+            }*/
+
             DataTable dt = new DataTable();
             if (Request.QueryString["cat"] != null)
             {
@@ -34,7 +94,9 @@ namespace Farmacie1
             {
                 dt = fct.Cauta("");
             }
-           
+
+
+
 
             stock.Controls.Clear();
             HtmlGenericControl octrl = new HtmlGenericControl("span");

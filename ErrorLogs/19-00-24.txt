@@ -1,0 +1,73 @@
+
+Log Entry : 
+08/19/2024 09:29:51
+Error Message:Insertion index was out of range. Must be non-negative and less than or equal to size.
+Parameter name: index Error line:85 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Stock.aspx.cs
+
+Log Entry : 
+08/19/2024 09:46:47
+Error Message:Invalid column name 'a'. Error line:415 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/19/2024 09:46:47
+Error Message:Invalid column name 'a'. Error line:67 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:07:22
+Error Message:Input string was not in a correct format. Error line:64 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:07:23
+Error Message:Input string was not in a correct format. Error line:64 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:07:24
+Error Message:Input string was not in a correct format. Error line:64 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:07:24
+Error Message:Input string was not in a correct format. Error line:64 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:34:07
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:34:10
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:34:24
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:34:25
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:34:25
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:36:52
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:36:53
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:36:53
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:36:54
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:36:54
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/19/2024 11:37:15
+Error Message:Input string was not in a correct format. Error line:112 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
