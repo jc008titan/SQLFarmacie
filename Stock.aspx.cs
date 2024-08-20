@@ -124,10 +124,10 @@ namespace Farmacie1
                 stock.Controls.Clear();
                 HtmlGenericControl octrl = new HtmlGenericControl("span");
                 octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "<a href=\"javascript:sortglobal('" + "nume"+"','"+"a"+"')\">^</a>" + " Nume " + "<a href=\"javascript:sortglobal('" + "nume"+"','"+"d"+"')\">v</a>" + " </th>";
-                octrl.InnerHtml += "<th onclick='sortTableDate(1)'>" + "Data_Expirare" + " </th>";
-                octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "Pret" + " </th>";
-                octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "Cantitate" + " </th>";
-                octrl.InnerHtml += "<th onclick='sortTable(4)'>" + "Categorie" + " </th>";
+                octrl.InnerHtml += "<th onclick='sortTableDate(1)'>" + "<a href=\"javascript:sortglobal('" + "data_expirare" + "','" + "a" + "')\">^</a>" + " Data_Expirare " + "<a href=\"javascript:sortglobal('" + "data_expirare" + "','" + "d" + "')\">v</a>" + " </th>";
+                octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "<a href=\"javascript:sortglobal('" + "pret" + "','" + "a" + "')\">^</a>" + " Pret " + "<a href=\"javascript:sortglobal('" + "pret" + "','" + "d" + "')\">v</a>" + " </th>";
+                octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "<a href=\"javascript:sortglobal('" + "cantitate" + "','" + "a" + "')\">^</a>" + " Cantitate " + "<a href=\"javascript:sortglobal('" + "cantitate" + "','" + "d" + "')\">v</a>" + " </th>";
+                octrl.InnerHtml += "<th onclick='sortTable(4)'>" + "<a href=\"javascript:sortglobal('" + "categorie" + "','" + "a" + "')\">^</a>" + " Categorie " + "<a href=\"javascript:sortglobal('" + "categorie" + "','" + "d" + "')\">v</a>" + " </th>";
                 if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
                 if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th> " + "</th>";
                 octrl.InnerHtml += "</thead>";

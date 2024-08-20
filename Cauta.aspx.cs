@@ -45,7 +45,10 @@ namespace Farmacie1
                         sCauta = "";
                     else
                     sCauta = Request.QueryString["cauta"].ToString();
-                    dt = fct.SelectCautaNumePagina(sCauta, iPageNumber);
+                    if (Request.QueryString["criteriu"] != null)
+                        dt = fct.GlobalSortCauta(Request.QueryString["criteriu"].ToString(), iPageNumber, sCauta);
+                    else
+                        dt = fct.SelectCautaNumePagina(sCauta, iPageNumber);
                     paging.Controls.Clear();
                     for (int i = 0; i < fct.NrPaginiCauta(sCauta); i++)
                     {
@@ -55,11 +58,11 @@ namespace Farmacie1
                     HtmlGenericControl octrl = new HtmlGenericControl("span");
                     if (dt.Rows.Count > 0)
                     {
-                        octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "Nume" + " </th>";
-                        octrl.InnerHtml += "<th onclick='sortTableDate(1)'>" + "Data_Expirare" + " </th>";
-                        octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "Pret" + " </th>";
-                        octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "Cantitate" + " </th>";
-                        octrl.InnerHtml += "<th onclick='sortTable(4)'>" + "Categorie" + " </th>";
+                        octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "<a href=\"javascript:sortglobal1('" + "nume" + "','" + "a" + "','" + sCauta +  "')\">^</a>" + " Nume " + "<a href=\"javascript:sortglobal1('" + "nume" + "','" + "d" + "','" + sCauta  + "')\">v</a>" + " </th>";
+                        octrl.InnerHtml += "<th onclick='sortTableDate(1)'>" + "<a href=\"javascript:sortglobal1('" + "data_expirare" + "','" + "a" + "','" + sCauta  + "')\">^</a>" + " Data_Expirare " + "<a href=\"javascript:sortglobal1('" + "data_expirare" + "','" + "d" + "','" + sCauta  + "')\">v</a>" + " </th>";
+                        octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "<a href=\"javascript:sortglobal1('" + "pret" + "','" + "a" + "','" + sCauta + "')\">^</a>" + " Pret " + "<a href=\"javascript:sortglobal1('" + "pret" + "','" + "d" + "','" + sCauta + "')\">v</a>" + " </th>";
+                        octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "<a href=\"javascript:sortglobal1('" + "cantitate" + "','" + "a" + "','" + sCauta + "')\">^</a>" + " Cantitate " + "<a href=\"javascript:sortgloba1l('" + "cantitate" + "','" + "d" + "','" + sCauta  + "')\">v</a>" + " </th>";
+                        octrl.InnerHtml += "<th onclick='sortTable(4)'>" + "<a href=\"javascript:sortglobal1('" + "categorie" + "','" + "a" + "','" + sCauta +  "')\">^</a>" + " Categorie " + "<a href=\"javascript:sortglobal1('" + "categorie" + "','" + "d" + "','" + sCauta +  "')\">v</a>" + " </th>";
                         if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
                         if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th> " + "</th>";
                         octrl.InnerHtml += "</thead>";
@@ -85,6 +88,7 @@ namespace Farmacie1
             }
             catch (Exception ex)
             {
+                err.WriteLogException(ex);
                 var st = new StackTrace(ex, true);
                 var frame = st.GetFrame(0);
                 var line = frame.GetFileLineNumber();
@@ -112,7 +116,9 @@ namespace Farmacie1
 
                 string sCauta = cautarenume.Value.ToString();
 
-
+                if (Request.QueryString["criteriu"] != null)
+                    dt = fct.GlobalSortCauta(Request.QueryString["criteriu"].ToString(),1,sCauta);
+                else
                 dt = fct.SelectCautaNumePagina(sCauta,1);
                 paging.Controls.Clear();
                 for (int i = 0; i < fct.NrPaginiCauta(sCauta); i++)
@@ -121,15 +127,16 @@ namespace Farmacie1
                 }
 
                 HtmlGenericControl octrl = new HtmlGenericControl("span");
-                if (dt.Rows.Count>0){octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "Nume" + " </th>";
-                octrl.InnerHtml += "<th onclick='sortTableDate(1)'>" + "Data_Expirare" + " </th>";
-                octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "Pret" + " </th>";
-                octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "Cantitate" + " </th>";
-                octrl.InnerHtml += "<th onclick='sortTable(4)'>" + "Categorie" + " </th>";
-                if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
-                if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th> " + "</th>";
-                octrl.InnerHtml += "</thead>";
-                for (int i = 0; i < dt.Rows.Count; i++)
+                if (dt.Rows.Count>0){
+                    octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "<a href=\"javascript:sortglobal('" + "nume" + "','" + "a" +  "')\">^</a>" + " Nume " + "<a href=\"javascript:sortglobal('" + "nume" + "','" + "d" +  "')\">v</a>" + " </th>";
+                    octrl.InnerHtml += "<th onclick='sortTableDate(1)'>" + "<a href=\"javascript:sortglobal('" + "data_expirare" + "','" + "a" +  "')\">^</a>" + " Data_Expirare " + "<a href=\"javascript:sortglobal('" + "data_expirare" + "','" + "d" +  "')\">v</a>" + " </th>";
+                    octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "<a href=\"javascript:sortglobal('" + "pret" + "','" + "a" + "')\">^</a>" + " Pret " + "<a href=\"javascript:sortglobal('" + "pret" + "','" + "d" +  "')\">v</a>" + " </th>";
+                    octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "<a href=\"javascript:sortglobal('" + "cantitate" + "','" + "a" +  "')\">^</a>" + " Cantitate " + "<a href=\"javascript:sortglobal('" + "cantitate" + "','" + "d" +  "')\">v</a>" + " </th>";
+                    octrl.InnerHtml += "<th onclick='sortTable(4)'>" + "<a href=\"javascript:sortglobal('" + "categorie" + "','" + "a"+  "')\">^</a>" + " Categorie " + "<a href=\"javascript:sortglobal('" + "categorie" + "','" + "d" + "')\">v</a>" + " </th>";
+                    if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th>" + "Editeaza" + " </th>";
+                    if (User.Identity.GetUserId() == "2c3fd8ce-7b56-4763-af75-0a0a31f73288") octrl.InnerHtml += "<th> " + "</th>";
+                    octrl.InnerHtml += "</thead>";
+                    for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     octrl.InnerHtml += "<tr>" + "<td data-label=\"Nume\">" + dt.Rows[i]["Nume"].ToString() + " </td>";
                     octrl.InnerHtml += "<td data-label=\"Data_Expirare\">" + DateTime.Parse(dt.Rows[i]["Data_Expirare"].ToString()).ToString("dd/MM/yyyy") + " </td>";

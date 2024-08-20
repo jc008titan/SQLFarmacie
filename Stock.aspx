@@ -21,10 +21,10 @@
                 xhttp.open("GET", "StockAJAX.aspx?cat=" + str, true);
                 xhttp.send();
             }
-            function openpage(page_nr) {
+            /*function openpage(page_nr) {
                 var url = window.location.href
                     .replace(/&&/g, '&')  // Replace && with &
-                    .replace(/(\?|&)page=\d+/g, '') // Remove all "page" parameters
+                    .replace(/(\?|&)page=\d+(&|$)/g, '$2') // Remove all "page" parameters
                     .replace(/&+/g, '&')   // Replace multiple & with a single &
                     .replace(/\?&/, '?')   // Fix if the first parameter was removed, leaving a dangling &
                     .replace(/(\?|&)$/, ''); // Remove trailing ? or &
@@ -32,30 +32,55 @@
                 // Append the new page parameter
                 if (url.indexOf('?') > 0) {
                     // If URL already has parameters, append with &
-                    window.location.href = url + (url.endsWith('?') ? "" : "&") + "page=" + page_nr;
+                    window.location.href = url + (url.endsWith('?') ? '' : '&') + "page=" + page_nr;
                 } else {
                     // If no parameters, start with ?
                     window.location.href = url + "?page=" + page_nr;
                 }
+            }*/
+            //function sortglobal(criteriu, ad) {
+            //    var url = window.location.href
+            //        .replace(/&&/g, '&')  // Replace && with &
+            //        .replace(/(\?|&)criteriu=[^&]*/g, '') // Remove all "criteriu" parameters
+            //        .replace(/&+/g, '&')   // Replace multiple & with a single &
+            //        .replace(/\?&/, '?')   // Fix if the first parameter was removed, leaving a dangling &
+            //        .replace(/(\?|&)$/, ''); // Remove trailing ? or &
+
+            //    // Append the new criteriu parameter
+            //    if (url.indexOf('?') > 0) {
+            //        // If URL already has parameters, append with &
+            //        window.location.href = url + (url.endsWith('?') ? '' : '&') + "criteriu=" + criteriu + ad;
+            //    } else {
+            //        // If no parameters, start with ?
+            //        window.location.href = url + "?criteriu=" + criteriu + ad;
+            //    }
+            //}
+            function openpage(page_nr) {
+                let url = new URL(window.location.href);
+                let params = new URLSearchParams(url.search);
+
+                // Set or update the page parameter
+                params.set('page', page_nr);
+
+                // Update the URL with the new parameters
+                url.search = params.toString();
+
+                // Redirect to the updated URL
+                window.location.href = url.toString();
             }
             function sortglobal(criteriu, ad) {
-                var url = window.location.href
-                    .replace(/&&/g, '&')  // Replace && with &
-                    .replace(/(\?|&)criteriu=[^&]*/g, '') // Remove all "criteriu" parameters
-                    .replace(/&+/g, '&')   // Replace multiple & with a single &
-                    .replace(/\?&/, '?')   // Fix if the first parameter was removed, leaving a dangling &
-                    .replace(/(\?|&)$/, ''); // Remove trailing ? or &
+                let url = new URL(window.location.href);
+                let params = new URLSearchParams(url.search);
 
-                // Append the new criteriu parameter
-                if (url.indexOf('?') > 0) {
-                    // If URL already has parameters, append with &
-                    window.location.href = url + (url.endsWith('?') ? "" : "&") + "criteriu=" + criteriu + ad;
-                } else {
-                    // If no parameters, start with ?
-                    window.location.href = url + "?criteriu=" + criteriu + ad;
-                }
+                // Set or update the criteriu parameter
+                params.set('criteriu', criteriu + ad);
+
+                // Update the URL with the new parameters
+                url.search = params.toString();
+
+                // Redirect to the updated URL
+                window.location.href = url.toString();
             }
-
             function openpage1(page_nr, sCauta) {
                // var url = window.location.href.split("?")[0];
              //   window.location.href = url + "?page=" + page_nr + "&cat=" + sCauta;

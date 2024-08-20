@@ -14,3 +14,11 @@ Error Message:Input string was not in a correct format. Error line:89 Error path
 Log Entry : 
 08/20/2024 09:32:29
 Error Message:Input string was not in a correct format. Error line:89 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Stock.aspx.cs
+
+Log Entry : 
+08/20/2024 12:30:15
+Error Message:Input string was not in a correct format. Error line:39 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
+
+Log Entry : 
+08/20/2024 12:35:13
+Error Message:Input string was not in a correct format. Error line:39 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Cauta.aspx.cs
