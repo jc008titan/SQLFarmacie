@@ -11,7 +11,6 @@
                     }
             }
             function showStock(str) {
-                removeOption();
                 var xhttp;
                 xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
@@ -23,15 +22,58 @@
                 xhttp.send();
             }
             function openpage(page_nr) {
-                var url = window.location.href.split("page")[0].replace("&", "");
+                var url = window.location.href
+                    .replace(/&&/g, '&')  // Replace && with &
+                    .replace(/(\?|&)page=\d+/g, '') // Remove all "page" parameters
+                    .replace(/&+/g, '&')   // Replace multiple & with a single &
+                    .replace(/\?&/, '?')   // Fix if the first parameter was removed, leaving a dangling &
+                    .replace(/(\?|&)$/, ''); // Remove trailing ? or &
 
+                // Append the new page parameter
                 if (url.indexOf('?') > 0) {
-                    window.location.href = url + "&page=" + page_nr;
-                }
-                else
-                {
+                    // If URL already has parameters, append with &
+                    window.location.href = url + (url.endsWith('?') ? "" : "&") + "page=" + page_nr;
+                } else {
+                    // If no parameters, start with ?
                     window.location.href = url + "?page=" + page_nr;
                 }
+            }
+            function sortglobal(criteriu, ad) {
+                var url = window.location.href
+                    .replace(/&&/g, '&')  // Replace && with &
+                    .replace(/(\?|&)criteriu=[^&]*/g, '') // Remove all "criteriu" parameters
+                    .replace(/&+/g, '&')   // Replace multiple & with a single &
+                    .replace(/\?&/, '?')   // Fix if the first parameter was removed, leaving a dangling &
+                    .replace(/(\?|&)$/, ''); // Remove trailing ? or &
+
+                // Append the new criteriu parameter
+                if (url.indexOf('?') > 0) {
+                    // If URL already has parameters, append with &
+                    window.location.href = url + (url.endsWith('?') ? "" : "&") + "criteriu=" + criteriu + ad;
+                } else {
+                    // If no parameters, start with ?
+                    window.location.href = url + "?criteriu=" + criteriu + ad;
+                }
+            }
+
+            function openpage1(page_nr, sCauta) {
+               // var url = window.location.href.split("?")[0];
+             //   window.location.href = url + "?page=" + page_nr + "&cat=" + sCauta;
+
+                var xhttp;
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("<%=stock.ClientID%>").innerHTML = this.responseText;
+                    }
+                };
+
+                if (sCauta.trim() == '')
+                    xhttp.open("GET", "StockAJAX.aspx?page=" + page_nr, true);
+                else
+                    xhttp.open("GET", "StockAJAX.aspx?cat=" + sCauta + "&page=" + page_nr, true);
+                xhttp.send();
+                
             }
             function hidepaging() {
                 document.getElementById("MainContent_paging").style.display = "none";

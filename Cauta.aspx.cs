@@ -41,6 +41,9 @@ namespace Farmacie1
 
                     DataTable dt = new DataTable();
                     rezultatecautare.Controls.Clear();
+                    if (Request.QueryString["cauta"] == null)
+                        sCauta = "";
+                    else
                     sCauta = Request.QueryString["cauta"].ToString();
                     dt = fct.SelectCautaNumePagina(sCauta, iPageNumber);
                     paging.Controls.Clear();

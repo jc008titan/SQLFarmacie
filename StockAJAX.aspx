@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div id="stock" runat="server"></div>
+        <div id="paging" runat="server"><!--a herf="javascript:OpenPage('1')" /><a herf="javascript:OpenPage('2')" /--></div>
     </form>
 </body>
 </html>

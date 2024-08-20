@@ -1,0 +1,16 @@
+
+Log Entry : 
+08/20/2024 09:14:01
+Error Message:Input string was not in a correct format. Error line:97 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Stock.aspx.cs
+
+Log Entry : 
+08/20/2024 09:17:34
+Error Message:Input string was not in a correct format. Error line:97 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Stock.aspx.cs
+
+Log Entry : 
+08/20/2024 09:32:17
+Error Message:Input string was not in a correct format. Error line:89 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Stock.aspx.cs
+
+Log Entry : 
+08/20/2024 09:32:29
+Error Message:Input string was not in a correct format. Error line:89 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\Farmacie1\\Stock.aspx.cs

@@ -80,9 +80,6 @@ namespace Farmacie1
                 oItem.Text = "Toate";
                 oItem.Value = "0";
                 adaugacategorie.Items.Insert(0, oItem);
-                ListItem oItem1 = new ListItem();
-                oItem1.Text = "Alege";
-                adaugacategorie.Items.Insert(0, oItem1);
 
 
 
@@ -97,7 +94,10 @@ namespace Farmacie1
                 DataTable dt;
                 if (Request.QueryString["cat"] != null)
                 {
-                    dt = fct.SelectCategorieNumePagina(Convert.ToInt32(Request.QueryString["cat"]),iPageNumber);
+                    if (Request.QueryString["criteriu"] != null)
+                        dt = fct.GlobalSortCat(Request.QueryString["criteriu"].ToString(), iPageNumber, Convert.ToInt32(Request.QueryString["cat"]));
+                    else
+                        dt = fct.SelectCategorieNumePagina(Convert.ToInt32(Request.QueryString["cat"]),iPageNumber);
                     adaugacategorie.SelectedValue = Request.QueryString["cat"];
                     paging.Controls.Clear();
                     for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"])); i++)
@@ -113,11 +113,17 @@ namespace Farmacie1
                         paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
                     }
                     //dt = fct.Cauta("");
+                    if (Request.QueryString["criteriu"] != null)
+                        dt = fct.GlobalSort(Request.QueryString["criteriu"].ToString(), iPageNumber);
+                    else
                     dt = fct.PaginaNr(iPageNumber);
                 }
+
+
+
                 stock.Controls.Clear();
                 HtmlGenericControl octrl = new HtmlGenericControl("span");
-                octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "Nume" + " </th>";
+                octrl.InnerHtml += "<table class='tblresults' id='myTable'>" + "<thead>" + "<th onclick='sortTable(0)'>" + "<a href=\"javascript:sortglobal('" + "nume"+"','"+"a"+"')\">^</a>" + " Nume " + "<a href=\"javascript:sortglobal('" + "nume"+"','"+"d"+"')\">v</a>" + " </th>";
                 octrl.InnerHtml += "<th onclick='sortTableDate(1)'>" + "Data_Expirare" + " </th>";
                 octrl.InnerHtml += "<th onclick='sortTableNr(2)'>" + "Pret" + " </th>";
                 octrl.InnerHtml += "<th onclick='sortTableNr(3)'>" + "Cantitate" + " </th>";
