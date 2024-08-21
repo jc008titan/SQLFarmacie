@@ -81,7 +81,7 @@
                 // Redirect to the updated URL
                 window.location.href = url.toString();
             }
-            function openpage1(page_nr, sCauta) {
+            function openpage1(page_nr, cat,criteriu) {
                // var url = window.location.href.split("?")[0];
              //   window.location.href = url + "?page=" + page_nr + "&cat=" + sCauta;
 
@@ -92,11 +92,18 @@
                         document.getElementById("<%=stock.ClientID%>").innerHTML = this.responseText;
                     }
                 };
-
-                if (sCauta.trim() == '')
-                    xhttp.open("GET", "StockAJAX.aspx?page=" + page_nr, true);
+                if (page_nr == "") page_nr = 1;
+                if (cat == "0") cat = '';
+                if (cat.trim() == '')
+                    if (criteriu.trim() == '')
+                        xhttp.open("GET", "StockAJAX.aspx?page=" + page_nr, true);
+                    else
+                        xhttp.open("GET", "StockAJAX.aspx?page=" + page_nr + "&criteriu=" + criteriu, true);
                 else
-                    xhttp.open("GET", "StockAJAX.aspx?cat=" + sCauta + "&page=" + page_nr, true);
+                    if (criteriu.trim() == '')
+                        xhttp.open("GET", "StockAJAX.aspx?cat=" + cat + "&page=" + page_nr, true);
+                    else
+                        xhttp.open("GET", "StockAJAX.aspx?cat=" + cat + "&page=" + page_nr + "&criteriu=" + criteriu, true);
                 xhttp.send();
                 
             }

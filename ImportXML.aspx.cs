@@ -81,7 +81,7 @@ protected void btnUpload_Click(object sender, EventArgs e)
                                 medicament.Data_Expirare = medicamenteXML.medicamentXML[i].Data_Expirare.ToString();
                                 medicament.Pret = medicamenteXML.medicamentXML[i].Pret.ToString();
                                 medicament.Cantitate = medicamenteXML.medicamentXML[i].Cantitate.ToString();
-                                medicament.id = Convert.ToInt32(dt.Rows[0]["ID"]);
+                                if (dt.Rows.Count != 0) medicament.id = Convert.ToInt32(dt.Rows[0]["ID"]);
                                 medicament.Categorie = Convert.ToInt32(medicamenteXML.medicamentXML[i].Categorie);
 
                                 if (dt.Rows.Count == 0)

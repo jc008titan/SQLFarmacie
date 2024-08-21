@@ -1,16 +1,16 @@
 <MedicamenteXML>
    <MedicamentXML>
-      <Nume>Smecta</Nume>
-      <Data_Expirare>2025-01-22 00:00:00.000</Data_Expirare>
-	<Pret>67.99</Pret>
-	<Cantitate>15</Cantitate>
+      <Nume>Sbecta</Nume>
+      <Data_Expirare>2026-01-22 00:00:00.000</Data_Expirare>
+	<Pret>57.99</Pret>
+	<Cantitate>19</Cantitate>
 	<Categorie>4</Categorie>
    </MedicamentXML>
 <MedicamentXML>
-      <Nume>Bufen</Nume>
-      <Data_Expirare>2025-06-24 00:00:00.000</Data_Expirare>
-	<Pret>57.33</Pret>
-	<Cantitate>22</Cantitate>
+      <Nume>Boden</Nume>
+      <Data_Expirare>2027-06-24 00:00:00.000</Data_Expirare>
+	<Pret>67.33</Pret>
+	<Cantitate>37</Cantitate>
 	<Categorie>5</Categorie>
    </MedicamentXML>
 </MedicamenteXML>
