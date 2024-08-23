@@ -16,7 +16,10 @@ namespace Farmacie1
         Functii fct = new Functii();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (!User.Identity.IsAuthenticated)
+            //{
+            //    Response.Redirect("~/Login.aspx");
+            //}
 
             int iPageNumber = 1;
             if (Request.QueryString["page"] != null)
@@ -57,13 +60,13 @@ namespace Farmacie1
                     {
                         for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"])); i++)
                         {
-                            paging.InnerHtml += "<a href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + Request.QueryString["cat"].ToString() + "','" + Request.QueryString["criteriu"].ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                            paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + Request.QueryString["cat"].ToString() + "','" + Request.QueryString["criteriu"].ToString() + "')\">" + (i + 1).ToString() + "</a>";
                         }
                     }
                     else
                         for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"])); i++)
                     {
-                        paging.InnerHtml += "<a href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + Request.QueryString["cat"].ToString() + "','" + "" + "')\">" + (i + 1).ToString() + "</a>";
+                        paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + Request.QueryString["cat"].ToString() + "','" + "" + "')\">" + (i + 1).ToString() + "</a>";
                     }
                 }
                 else
@@ -73,7 +76,7 @@ namespace Farmacie1
                     {
                         for (int i = 0; i < fct.NrPagini(); i++)
                         {
-                            paging.InnerHtml += "<a href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + "" + "','" + Request.QueryString["criteriu"].ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                            paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + "" + "','" + Request.QueryString["criteriu"].ToString() + "')\">" + (i + 1).ToString() + "</a>";
                         }
                         dt = fct.GlobalSort(Request.QueryString["criteriu"].ToString(), iPageNumber);
                     }
@@ -81,7 +84,7 @@ namespace Farmacie1
                     {
                         for (int i = 0; i < fct.NrPagini(); i++)
                         {
-                            paging.InnerHtml += "<a href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + "" + "','" + "" + "')\">" + (i + 1).ToString() + "</a>";
+                            paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + "" + "','" + "" + "')\">" + (i + 1).ToString() + "</a>";
                         }
                         //dt = fct.Cauta("");
                         dt = fct.PaginaNr(iPageNumber);
@@ -95,7 +98,7 @@ namespace Farmacie1
                 {
                     for (int i = 0; i < fct.NrPagini(); i++)
                     {
-                        paging.InnerHtml += "<a href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + "" + "','" + Request.QueryString["criteriu"].ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                        paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + "" + "','" + Request.QueryString["criteriu"].ToString() + "')\">" + (i + 1).ToString() + "</a>";
                     }
                     dt = fct.GlobalSort(Request.QueryString["criteriu"].ToString(), iPageNumber);
                 }
@@ -103,7 +106,7 @@ namespace Farmacie1
                 {
                     for (int i = 0; i < fct.NrPagini(); i++)
                     {
-                        paging.InnerHtml += "<a href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + "" + "','" + "" + "')\">" + (i + 1).ToString() + "</a>";
+                        paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage1('" + (i + 1).ToString() + "','" + "" + "','" + "" + "')\">" + (i + 1).ToString() + "</a>";
                     }
                     //dt = fct.Cauta("");
                     dt = fct.PaginaNr(iPageNumber);

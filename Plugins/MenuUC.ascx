@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MenuUC.ascx.cs" Inherits="Farmacie1.Plugins.MenuUC" %>
-<div class="navbar" runat="server">
+<div style="margin-left:-8px" class="navbar" runat="server">
 <div class="dropdown">
 <asp:Button class="dropbtn" OnClientClick="window.location.href='Default.aspx'; return false;" Text="Home" runat="server" CausesValidation="false">
 </asp:Button>
@@ -24,7 +24,7 @@
         </div>
 
     <div class="logout">
-      <asp:Button class="logoutbtn" ID="LogoutButton" runat="server" OnClick="SignOut" Text="Deconectare" />
+      <asp:Button class="logoutbtn"  ID="LogoutButton" runat="server" OnClick="SignOut" Text="Deconectare" />
 </div>
 
         <div class="cont">

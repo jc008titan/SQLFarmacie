@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div id="stock" runat="server"></div>
-        <div id="paging" runat="server"><!--a herf="javascript:OpenPage('1')" /><a herf="javascript:OpenPage('2')" /--></div>
+        <br/>
+        <div style="margin-left:220px" id="paging" runat="server"><!--a herf="javascript:OpenPage('1')" /><a herf="javascript:OpenPage('2')" /--></div>
     </form>
 </body>
 </html>

@@ -91,12 +91,14 @@
             }
             
         </script>
-
-        <label for="fname">Cauta medicament dupa nume </label>
-         <input type="text" id="cautarenume" runat="server">
-        <button runat="server" id="btncauta" onserverclick="cauta_onclick">Cauta</button>
+        <h4 for="fname" style="font-family:'Calibri'">Cauta medicament dupa nume</h4>
+         <input type="text" class="w3-input w3-border" style="width:600px;font-size:16px" id="cautarenume" runat="server">
+        <br/>
+        <button runat="server" style="border-radius: 4px;padding: 4px;text-align: center;cursor:pointer;background-color:darkgray;font-size: 16px;width:60px;font-family:'Calibri'" id="btncauta" onserverclick="cauta_onclick">Cauta</button>   
+    <br/><br/>
         <div id="rezultatecautare" runat="server"></div>
-        <div id="paging" runat="server"></div>
+        <br/>
+        <div style="margin-left:220px" id="paging" runat="server"></div>
 
     </main>
     

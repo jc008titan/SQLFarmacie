@@ -66,7 +66,10 @@ namespace Farmacie1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (!User.Identity.IsAuthenticated)
+            //{
+            //    Response.Redirect("~/Login.aspx");
+            //}
             try
             {
                 DataTable dts = new DataTable();
@@ -102,7 +105,7 @@ namespace Farmacie1
                     paging.Controls.Clear();
                     for (int i = 0; i < fct.NrPaginiCategorie(Convert.ToInt32(Request.QueryString["cat"])); i++)
                     {
-                        paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                        paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
                     }
                 }
                 else
@@ -110,7 +113,7 @@ namespace Farmacie1
                     paging.Controls.Clear();
                     for (int i = 0; i < fct.NrPagini(); i++)
                     {
-                        paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                        paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
                     }
                     //dt = fct.Cauta("");
                     if (Request.QueryString["criteriu"] != null)

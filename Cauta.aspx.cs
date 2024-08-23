@@ -25,7 +25,10 @@ namespace Farmacie1
         {
             //if (!Page.IsPostBack)
             //{
-
+            //if (!User.Identity.IsAuthenticated)
+            //{
+            //    Response.Redirect("~/Login.aspx");
+            //}
             try
             {
 
@@ -52,7 +55,7 @@ namespace Farmacie1
                     paging.Controls.Clear();
                     for (int i = 0; i < fct.NrPaginiCauta(sCauta); i++)
                     {
-                        paging.InnerHtml += "<a href=\"javascript:openpage1('" + (i + 1).ToString() +"','"+sCauta+"')\">" + (i + 1).ToString() + "</a>";
+                        paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage1('" + (i + 1).ToString() +"','"+sCauta+"')\">" + (i + 1).ToString() + "</a>";
                     }
 
                     HtmlGenericControl octrl = new HtmlGenericControl("span");
@@ -123,7 +126,7 @@ namespace Farmacie1
                 paging.Controls.Clear();
                 for (int i = 0; i < fct.NrPaginiCauta(sCauta); i++)
                 {
-                    paging.InnerHtml += "<a href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
+                    paging.InnerHtml += "<a style=\"border:solid 1px;padding:5px;border-radius:4px;margin-right:5px\" href=\"javascript:openpage('" + (i + 1).ToString() + "')\">" + (i + 1).ToString() + "</a>";
                 }
 
                 HtmlGenericControl octrl = new HtmlGenericControl("span");

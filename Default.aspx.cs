@@ -21,6 +21,10 @@ namespace Farmacie1
         ErrorLogs err = new ErrorLogs();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (!User.Identity.IsAuthenticated)
+            //{
+            //    Response.Redirect("~/Login.aspx");
+            //}
             //if (!Page.IsPostBack)
             //{
 

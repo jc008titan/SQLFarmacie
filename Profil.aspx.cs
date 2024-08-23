@@ -21,6 +21,10 @@ namespace Farmacie1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (!User.Identity.IsAuthenticated)
+            //{
+            //    Response.Redirect("~/Login.aspx");
+            //}
         }
         protected void DeleteAccount(object sender, EventArgs e)
         {

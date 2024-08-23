@@ -1,9 +1,10 @@
-﻿<%@ Page Title="Stock Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Stock.aspx.cs" Inherits="Farmacie1.Stock" %>
+﻿<%@  Page Title="Stock Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Stock.aspx.cs" Inherits="Farmacie1.Stock"%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
+
     <main>
         <script>
+
             function removeOption() {
                 var x = document.getElementById("MainContent_adaugacategorie");
                     if (x.options[0].innerHTML != "Toate") {
@@ -111,10 +112,11 @@
                 document.getElementById("MainContent_paging").style.display = "none";
             }
         </script>
-        <asp:DropDownList ID="adaugacategorie" runat="server" onchange="showStock(this.value);hidepaging()"></asp:DropDownList>
+        <asp:DropDownList  ID="adaugacategorie" runat="server" onchange="showStock(this.value);hidepaging()"></asp:DropDownList>
         <br /> <br /> 
          <div id="stock" runat="server"></div>
-        <div id="paging" runat="server"><!--a herf="javascript:OpenPage('1')" /><a herf="javascript:OpenPage('2')" /--></div>
+        <br/>
+        <div style="margin-left:220px" id="paging" runat="server"><!--a herf="javascript:OpenPage('1')" /><a herf="javascript:OpenPage('2')" /--></div>
 
     </main>
     
