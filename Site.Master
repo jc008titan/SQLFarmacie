@@ -52,9 +52,6 @@
     </script>
 </head>
 <body>
-    <div id = "dialog-2"
-         title = "Dialog Title goes here...">This my first jQuery UI Dialog!</div>
-
     <form runat="server">
     <uc:TopMenu runat="server"></uc:TopMenu>
     

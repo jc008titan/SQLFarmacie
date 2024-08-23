@@ -1,0 +1,21 @@
+
+Log Entry : 
+08/22/2024 11:30:40
+Error Message:The multi-part identifier "vasile@sql.com" could not be bound.
+Invalid column name 'Cluj'.
+Invalid column name 'Napoca'.
+Invalid column name 'Cluj'. Error line:678 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/22/2024 11:31:56
+Error Message:The multi-part identifier "vasile@sql.com" could not be bound.
+Invalid column name 'Cluj'.
+Invalid column name 'Napoca'.
+Invalid column name 'Cluj'. Error line:678 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
+
+Log Entry : 
+08/22/2024 11:32:36
+Error Message:The multi-part identifier "vasile@sql.com" could not be bound.
+Invalid column name 'Cluj'.
+Invalid column name 'Napoca'.
+Invalid column name 'Cluj'. Error line:678 Error path:C:\\Users\\ripan\\Desktop\\Practica\\SQL\\ClassLibrary1\\Functii.cs
