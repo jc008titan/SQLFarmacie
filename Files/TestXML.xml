@@ -7,10 +7,10 @@
 	<Categorie>4</Categorie>
    </MedicamentXML>
 <MedicamentXML>
-      <Nume>Boden</Nume>
-      <Data_Expirare>2027-06-24 00:00:00.000</Data_Expirare>
-	<Pret>67.33</Pret>
-	<Cantitate>37</Cantitate>
+      <Nume>Bofen</Nume>
+      <Data_Expirare>2027-09-24 00:00:00.000</Data_Expirare>
+	<Pret>17.33</Pret>
+	<Cantitate>12</Cantitate>
 	<Categorie>5</Categorie>
    </MedicamentXML>
 </MedicamenteXML>

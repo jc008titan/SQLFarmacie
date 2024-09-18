@@ -45,6 +45,12 @@ table.tblresults {
         position: relative;
         padding-left: 50%;
     }
+        .tblresults td:before {
+            position: absolute;
+            left: 6px;
+            content: attr(data-label);
+            font-weight: bold;
+        }
 
 
 }

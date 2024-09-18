@@ -24,7 +24,7 @@
     }
 
         .tblresults tr {
-            max-width:360px;
+            max-width:420px;
             margin-bottom: 20px;
             border: solid 1px blue;
         }
